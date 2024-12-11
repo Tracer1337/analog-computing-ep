@@ -24,9 +24,9 @@
 \input{skripte/meta}
 
 \newcommand{\langde}[1]{%
-   \ifde\selectlanguage{ngerman}#1\fi}
+\ifde\selectlanguage{ngerman}#1\fi}
 \newcommand{\langen}[1]{%
-   \ifen\selectlanguage{english}#1\fi}
+\ifen\selectlanguage{english}#1\fi}
 \usepackage[utf8]{luainputenc}
 \langde{\usepackage[babel,german=quotes]{csquotes}}
 \langen{\usepackage[babel,english=british]{csquotes}}
@@ -55,7 +55,7 @@
 \usepackage{courier}
 \usepackage{amsmath}
 \usepackage[table]{xcolor}
-\usepackage{marvosym}			% Verwendung von Symbolen, z.B. perfektes Eurozeichen
+\usepackage{marvosym}      % Verwendung von Symbolen, z.B. perfektes Eurozeichen
 
 \renewcommand\familydefault{\sfdefault}
 \usepackage{ragged2e}
@@ -96,35 +96,35 @@
 \usepackage{listings}
 % JavaScript als Sprache definieren:
 \lstdefinelanguage{JavaScript}{
-	keywords={break, super, case, extends, switch, catch, finally, for, const, function, try, continue, if, typeof, debugger, var, default, in, void, delete, instanceof, while, do, new, with, else, return, yield, enum, let, await},
-	keywordstyle=\color{blue}\bfseries,
-	ndkeywords={class, export, boolean, throw, implements, import, this, interface, package, private, protected, public, static},
-	ndkeywordstyle=\color{darkgray}\bfseries,
-	identifierstyle=\color{black},
-	sensitive=false,
-	comment=[l]{//},
-	morecomment=[s]{/*}{*/},
-	commentstyle=\color{purple}\ttfamily,
-	stringstyle=\color{red}\ttfamily,
-	morestring=[b]',
-	morestring=[b]"
+  keywords={break, super, case, extends, switch, catch, finally, for, const, function, try, continue, if, typeof, debugger, var, default, in, void, delete, instanceof, while, do, new, with, else, return, yield, enum, let, await},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this, interface, package, private, protected, public, static},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
 }
 
 \lstset{
-	%language=JavaScript,
-	numbers=left,
-	numberstyle=\tiny,
-	numbersep=5pt,
-	breaklines=true,
-	showstringspaces=false,
-	frame=l ,
-	xleftmargin=5pt,
-	xrightmargin=5pt,
-	basicstyle=\ttfamily\scriptsize,
-	stepnumber=1,
-	keywordstyle=\color{blue},          % keyword style
-  	commentstyle=\color{dkgreen},       % comment style
-  	stringstyle=\color{mauve}         % string literal style
+  %language=JavaScript,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  breaklines=true,
+  showstringspaces=false,
+  frame=l ,
+  xleftmargin=5pt,
+  xrightmargin=5pt,
+  basicstyle=\ttfamily\scriptsize,
+  stepnumber=1,
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve}         % string literal style
 }
 
 %-----------------------------------
@@ -138,27 +138,25 @@
 
 %%%% Neuer Leitfaden (2018)
 \usepackage[
-backend=biber,
-style=ext-authoryear-ibid, % Auskommentieren und nächste Zeile einkommentieren, falls "Ebd." (ebenda) nicht für sich-wiederholende Fussnoten genutzt werden soll.
-%style=ext-authoryear,
-maxcitenames=3,	% mindestens 3 Namen ausgeben bevor et. al. kommt
-maxbibnames=999,
-mergedate=false,
-date=iso,
-seconds=true, %werden nicht verwendet, so werden aber Warnungen unterdrückt.
-urldate=iso,
-innamebeforetitle,
-dashed=false,
-autocite=footnote,
-doi=false,
-useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
-mincrossrefs = 1
+  backend=biber,
+  style=ext-authoryear-ibid, % Auskommentieren und nächste Zeile einkommentieren, falls "Ebd." (ebenda) nicht für sich-wiederholende Fussnoten genutzt werden soll.
+  %style=ext-authoryear,
+  maxcitenames=3,  % mindestens 3 Namen ausgeben bevor et. al. kommt
+  maxbibnames=999,
+  mergedate=false,
+  date=iso,
+  seconds=true, %werden nicht verwendet, so werden aber Warnungen unterdrückt.
+  urldate=iso,
+  innamebeforetitle,
+  dashed=false,
+  autocite=footnote,
+  doi=false,
+  useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
+  mincrossrefs = 1
 ]{biblatex}%iso dateformat für YYYY-MM-DD
 
 %weitere Anpassungen für BibLaTex
 \input{skripte/modsBiblatex2018}
-
-\
 
 %%%%% Alter Leitfaden. Ggf. Einkommentieren und Bereich hierüber auskommentieren
 %\usepackage[
@@ -217,7 +215,7 @@ mincrossrefs = 1
 \setlength{\parindent}{0mm}
 \setlength{\parskip}{0.8em plus 0.5em minus 0.3em}
 
-\sloppy					%Abstände variieren
+\sloppy          %Abstände variieren
 \pagestyle{headings}
 
 %----------------------------------
@@ -257,12 +255,12 @@ mincrossrefs = 1
 \makeatother
 
 \hypersetup{
-    pdfinfo={
-        Title={\myTitel},
-        Subject={\myStudiengang},
-        Author={\myAutor},
-        Build=1.1
-    }
+  pdfinfo={
+    Title={\myTitel},
+    Subject={\myStudiengang},
+    Author={\myAutor},
+    Build=1.1
+  }
 }
 
 %-----------------------------------
@@ -275,18 +273,18 @@ mincrossrefs = 1
 % siehe auch: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
 %-----------------------------------
 \lstset{literate=
-	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
-	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
-	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
-	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
-	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
-	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
-	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
-	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
-	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
-	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
-	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
-	{€}{{\EUR}}1 {£}{{\pounds}}1 {„}{{\glqq{}}}1
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1 {„}{{\glqq{}}}1
 }
 
 %-----------------------------------
@@ -299,7 +297,7 @@ mincrossrefs = 1
 
 % Seitenzahl oben, mittig, entsprechend Leitfaden ohne Striche beidseits
 \fancyhead[C]{\thepage}
-%\fancyhead[L]{\leftmark}							% kein Footer vorhanden
+%\fancyhead[L]{\leftmark}              % kein Footer vorhanden
 % Waagerechte Linie unterhalb des Kopfbereiches anzeigen. Laut Leitfaden ist
 % diese Linie nicht erforderlich. Ihre Breite kann daher auf 0pt gesetzt werden.
 \renewcommand{\headrulewidth}{0.4pt}
@@ -316,8 +314,8 @@ mincrossrefs = 1
 %-----------------------------------
 \begin{document}
 
-\pagenumbering{Roman}								% Seitennumerierung auf römisch umstellen
-\newcolumntype{C}{>{\centering\arraybackslash}X}	% Neuer Tabellen-Spalten-Typ:
+\pagenumbering{Roman}                % Seitennumerierung auf römisch umstellen
+\newcolumntype{C}{>{\centering\arraybackslash}X}  % Neuer Tabellen-Spalten-Typ:
 %Zentriert und umbrechbar
 
 %-----------------------------------
@@ -407,14 +405,14 @@ mincrossrefs = 1
 \addcontentsline{toc}{section}{\AppendixName} %Den Anhang ohne Nummer zum Inhaltsverzeichnis hinzufügen
 
 \begin{appendices}
-% Nachfolgende Änderungen erfolgten aufgrund von Issue 163
-\makeatletter
-\renewcommand\@seccntformat[1]{\csname the#1\endcsname:\quad}
-\makeatother
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %
-	\renewcommand{\thesection}{\AppendixName\ \arabic{section}}
-	\renewcommand\thesubsection{\AppendixName\ \arabic{section}.\arabic{subsection}}
-	\input{kapitel/anhang/anhang}
+  % Nachfolgende Änderungen erfolgten aufgrund von Issue 163
+  \makeatletter
+  \renewcommand\@seccntformat[1]{\csname the#1\endcsname:\quad}
+  \makeatother
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %
+  \renewcommand{\thesection}{\AppendixName\ \arabic{section}}
+  \renewcommand\thesubsection{\AppendixName\ \arabic{section}.\arabic{subsection}}
+  \input{kapitel/anhang/anhang}
 \end{appendices}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
@@ -468,7 +466,7 @@ mincrossrefs = 1
 % Die Option heading=bibintoc würde die Internetquelle als eigenen Eintrag im
 % Inhaltsverzeicnis anzeigen.
 %\printbibliography[type=online,heading=bibintoc,title={\headingNameInternetSources}]
-\printbibliography[type=online,heading=subbibliography,title={\headingNameInternetSources}]
+% \printbibliography[type=online,heading=subbibliography,title={\headingNameInternetSources}]
 
 \input{kapitel/anhang/erklaerung}
 \end{document}

@@ -1,7 +1,7 @@
 \subsubsection{Aufbau und Arten neuronaler Netze}
 
 \begin{quote}
-"`Birds inspired us to fly, burdock plants inspired Velcro, and nature has in- spired countless more inventions. It seems only logical then, to look at the brain’s architecture for inspiration on how to build an intelligent machine"' (\cite[S. 279]{Geron2019})
+  "`Birds inspired us to fly, burdock plants inspired Velcro, and nature has in- spired countless more inventions. It seems only logical then, to look at the brain’s architecture for inspiration on how to build an intelligent machine"' (\cite[S. 279]{Geron2019})
 \end{quote}
 
 Neuronale Netze wurden erstmals 1943 von den Wissenschaftlern Warren S. McCulloch und Walter Pitts in ihrer gemeinsamen Arbeit „A logical calculus of the ideas immanent in nervous activity“ (\cite{McCulloch1943}) eingeführt. Sie stellten ein vereinfachtes Modell eines künstlichen Neurons vor, das lediglich aus binären Eingaben und einer binären Ausgabe besteht und seine Ausgabe aktiviert, sobald sich eine bestimmte Anzahl an Eingabewerten aktiviert. McCulloch und Pitts zeigten, dass dieser einfache Baustein ausreicht, um jeden möglichen logischen Ausdruck als neuronales Netz darzustellen.
@@ -14,7 +14,7 @@ Aktivierungsfunktionen aus Buch einfügen
 
 Abbildung aus Buch nachstellen
 
-Eine alleinstehende \gls{tlu} kann ausschließlich für lineare binäre Klassifikation genutzt werden, es berechnet eine gewichtete Summe anhand der Eingabewerte und gibt einen positiven oder negativen Ausgabewert, abhängig von der Überschreitung eines Schwellenwertes. Ein \gls{perceptron} stellt nun eine Sammlung dieser Einheiten auf einer einzelnen Ebene dar, wobei jede \gls{tlu} mit jeder Eingabe verbunden ist. Dies wird als \gls{dense_layer} oder \gls{fully_connected_layer} bezeichnet. Die Eingabewerte des \gls{perceptron} werden durch Eingabe-Neuronen geschleust, wozu zusätzlich ein \gls{bias_neuron} gezählt wird. Dieses Neuron gibt konstant den Wert 1 aus und dient dazu, jedem Neuron des \gls{perceptron} eine Bias-Gewichtung zuzuweisen. Die Ausgabe eines \gls{perceptron} berechnet sich durch \(h_W,b(X)=φ(XW+b)\) \cite[S. 284 ff.]{Geron2019}
+Eine alleinstehende \gls{tlu} kann ausschließlich für lineare binäre Klassifikation genutzt werden, es berechnet eine gewichtete Summe anhand der Eingabewerte und gibt einen positiven oder negativen Ausgabewert, abhängig von der Überschreitung eines Schwellenwertes. Ein \gls{perceptron} stellt nun eine Sammlung dieser Einheiten auf einer einzelnen Ebene dar, wobei jede \gls{tlu} mit jeder Eingabe verbunden ist. Dies wird als \gls{dense_layer} oder \gls{fully_connected_layer} bezeichnet. Die Eingabewerte des \gls{perceptron} werden durch Eingabe-Neuronen geschleust, wozu zusätzlich ein \gls{bias_neuron} gezählt wird. Dieses Neuron gibt konstant den Wert 1 aus und dient dazu, jedem Neuron des \gls{perceptron} eine Bias-Gewichtung zuzuweisen. Die Ausgabe eines \gls{perceptron} berechnet sich durch \(h_W,b(X)=p(XW+b)\) \cite[S. 284 ff.]{Geron2019}
 
 Das \gls{perceptron} kann nun in mehreren Ebenen genutzt werden, um ein \gls{mlp} zu erzeugen. Dieses besteht aus einer Eingabe-Ebene, mindestens einer versteckten Ebene und einer Ausgabe-Ebene. Jede dieser Ebenen ist im \gls{mlp} mit der jeweils nächsten Ebene vollständig verbunden. Das \gls{mlp} kann durch die vorwärts gerichteten Verbindungen auch als \gls{fnn} bezeichnet werden, eines mit vielen versteckten Ebenen wird \gls{dnn} genannt. \cite[S. 284 ff.]{Geron2019}
 
