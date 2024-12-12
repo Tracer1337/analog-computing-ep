@@ -1,0 +1,15 @@
+\subsubsection{Training neuronaler Netze mit Backpropagation und Gradient Descent}
+
+Das \gls{gradient_descent} ist ein Optimierungs-Algorithmus, der mithilfe einer Fehlerfunktion die Parameter eines Modells so anpasst, dass die Fehlerfunktion minimiert wird. Um das zu erreichen, muss das Verfahren erst die Steigung der Fehlerfunktion berechnen können, um dann iterativ die Parameter anzupassen. \cite[vgl. S. 118]{Geron2019}
+
+\begin{quote}
+  "`Neurons wire together if they fire together'" \cite{Lowel1992}
+\end{quote}
+
+Dieses Zitat prägt das sog. \gls{hebbian_learning}, eine Regel die beschreibt wie sich die Gewichtungen zwischen Neuronen relativ zu deren Aktivierungen verändern. Ein \gls{perceptron} wird mit einer Abwandlung dieser Regel trainiert, die außerdem den Fehler der Ausgabe mit einbezieht und diejenigen Gewichtungen verstärkt, die zu einer Verringerung des Fehlers führen. \cite[vgl. S. 289 ff.]{Geron2019} Die Lernregel lautet damit:
+
+\[{w_{i,j}}^{(next step)}=w_{i,j}+\eta(y_j-\hat{y}_j)\]
+
+Ein Verfahren zum Trainieren eines \gls{mlp} stellt das von \cite{Rumelhart1986} vorgestellte \gls{backpropagation} dar. Dieses basiert auf dem \gls{gradient_descent}, mit der Eigenschaft die Gradienten der Gewichtungen in allen Ebenen des \gls{mlp} mit Bezug auf jeden einzelnen Parameter effizient berechnen zu können. Die Trainingsdaten werden in mehreren Epochen im folgenden Ablauf durchlaufen:
+
+Zuerst wird für jede Instanz der Trainingsdaten das \gls{mlp} im \gls{forward_pass} durchlaufen. Die Ausgabe jedes Neurons der versteckten Ebenen wird dabei zwischengespeichert. Nun wird die Ausgabe des \gls{mlp} anhand der Fehlerfunktion bestimmt. Die Gradienten aller Gewichtungen zwischen Neuronen der versteckten Ebenen werden im \gls{reverse_pass} bestimmt. Dazu wird der Beitrag jedes Ausgabe-Neuronen zum Fehler berechnet und gleiches rekursiv für die Neuronen der versteckten Ebenen wiederholt. Mit den berechneten Werten kann abschließend das \gls{gradient_descent} angewendet werden. \cite[S. 286]{Geron2019}
