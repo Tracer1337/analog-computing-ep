@@ -1,0 +1,31 @@
+\subsubsection{Aufbau von Schaltkreisen zur Lösung von Differenzialgleichungen}
+
+Im Folgenden werden zwei wesentliche Ansätze zum Ableiten eines analogen Computers von einer Reihe an Differenzialgleichungen vorgestellt: die \gls{kelvin_feedback_technique} sowie die \gls{substitution_method}
+
+Um einen analogen Rechner mithilfe der \gls{kelvin_feedback_technique} zu konstruieren, muss die vorliegende Differenzialgleichungen so umgestellt werden, dass die höchsten Ableitungen alleine auf der linken Seite stehen. Die Ableitungen niedrigerem Grades können durch Integration der höchsten Ableitung gebildet werden, weshalb mithilfe der höchsten Ableitung die rechte Seite der Gleichung gebildet werden kann. Da die rechte Seite der Gleichung die höchste Ableitung darstellt, kann eine Rückkopplung hergestellt werden. \cite[vgl. S. 153 ff.]{Ulmann2022}
+
+Abbildung aus Ulmann2022 S. 154
+
+Die \gls{substitution_method} substituiert Teile einer Gleichung, um Gleichungen ersten Grades zu erhalten. Die Schaltungen der substituierten Gleichungen werden verbunden, um das Ergebnis zu erhalten. Die Anwendung dieser Methode führt aber zu Schwierigkeiten beim Umgang mit Initialwerten ungleich null und ist umständlich für reale Anwendungen. \cite[vgl. S. 155 ff.]{Ulmann2022}
+
+Der Wertebereich eines analogen Computers liegt i.d.R. bei \pm 1, weshalb Skalierung notwendig ist, um die berechneten Werte zu realen Werten umzuwandeln. Hierzu kann eine Zuordnung von maschinellen Variablen zu realen Variablen zum Einsatz kommen, jede Zuordnung ist dabei mit einem Skalierungsfaktor versehen. Die Skalierung von Zeit kann auch sinnvoll sein, um die Berechnungen zu beschleunigen. \cite[vgl. S. 162 ff.]{Ulmann2022}
+
+Als Beispiel wird, wie von \cite[S. 168 ff.]{Ulmann2022} beschrieben, hier ein Masse-Feder-Dämpfer System aufgeführt:
+
+Ein Gewicht mit einer Masse \(m\) ist mit einer Feder mit Starrheit \(s\) und einem Dämpfer mit Dämpfungsfaktor \(d\) verbunden. Sei \(y\) die Position des Gewichts, so wirkt durch das Gewicht die Kraft \(my''\), durch den Dämpfer \(dy'\) und durch die Feder \(sy\). Die Summe aller Kräfte in einem geschlossenem physikalischen System sind gleich 0, deshalb gilt:
+
+\[my''+dy'+sy=0\]
+
+Unter Anwendung der \gls{kelvin_feedback_technique} ergibt sich folgende Gleichung:
+
+\[y''=\frac{-(dy'+sy)}{m}\]
+
+Der Schaltkreis zur Lösung von \(-(dy'+sy)\) kann wie folgt gebildet werden:
+
+Ulmann2022, Fig. 8.11. S. 170
+
+Abschließend muss nur noch die Rückkopplung zu \(y''\) hergestellt werden:
+
+Ulmann2022, Fig. 8.12. S. 170
+
+Zur Berechnung der realen Werte müssen die berechneten Werte entsprechend skaliert werden. Die Informationen über Maximalwerte von \(y\), \(y'\) und \(y''\) ist dafür notwendig.
