@@ -1,0 +1,29 @@
+\paragraph{Theoretische Anwendung am Beispiel eines Hopfield-Netzwerks}
+
+Wie von \cite{Scellier2017} bereits beschrieben, ist \gls{equilibriumpropagation} auf das \gls{hopfieldnetzwerk} anwendbar. Für diese Anwendung muss zuerst die Energiefunktion des Modells bestimmt werden. Seien \(u\) die Neuronen des Netzwerks, \(W_{i,j}\) die Gewichtung der Verbindung zweier Neuronen und \(b_i\) der Bias eines Neuron, so können die Parameter des Modells als \(\theta=(W,b)\) definiert werden. Die Aktivierungsfunktion ist definiert als \(\rho(u_i)\). Zusätzlich werden die Neuronen aufgeteilt in Eingabeneuronen \(x\), versteckte Neuronen \(h\) und Ausgabeneuronen \(y\), die Gesamtheit der Neuronen im Netzwerk ist damit \(u=\{x,h,y\}\). Mit diesen Variablen kann nun die Hopfield-Energiefunktion aufgestellt werden:
+
+\[E(u):=\frac{1}{2}\sum_iu_i^2-\frac{1}{2}\sum_{i\neq{j}}W_{ij}\rho(u_i)\rho(u_j)-\frac{1}{2}\sum_ib_i\rho(u_i)\]
+
+Um die Kostenfunktion \(C\) aufzustellen, müssen noch die Zielwerte \(d\) definiert werden, welche die für die Eingabewerte korrekten Ausgabewerte beinhalten. Damit lautet die Kostenfunktion:
+
+\[C:=\frac{1}{2}\|y-d\|^2\]
+
+Diese Funktion kann genutzt werden, um die Ausgabeneuronen in Richtung der Zielwerte zu schieben. Aus der Energiefunktion kann zusammen mit der Kostenfunktion die Gesamtenergiefunktion \(F\) gebildet werden:
+
+\[F:=E+\beta C\]
+
+Die Zustandsvariable \(s\) ist definiert als \(s=\{h,y\}\). Sie besteht aus den versteckten und den Ausgabeneuronen und beinhaltet nicht die Eingabeneuronen, da diese immer festgelegt sind. Der Gradient dieser Zustandvariable über Zeit ist gegeben durch \(\frac{ds}{dt}=-\frac{\partial F}{\partial s}\), wodurch die Energiefunktion minimiert und somit ein Fixpunkt des Netzwerks gefunden wird. Dieser Gradient kann so betrachtet werden, dass zwei Kräfte auf ihn wirken:
+
+\[\frac{ds}{dt}=-\frac{\partial E}{\partial s}-\beta\frac{\partial C}{\partial s}\]
+
+Hierbei ist die durch die Hopfield-Energiefunktion ausgeübte Kraft:
+
+\[-\frac{\partial E}{\partial s_i}=\rho'(s_i)\left(\sum_{i\neq{j}}W_{ij}\rho(u_j)+b_i\right)-s_i\]
+
+Durch die Kostenfunktion wirken die Kräfte \(-\beta\frac{\partial C}{\partial h_i}=0\) und \(-\beta\frac{\partial C}{\partial y_i}=\beta(d_i-y_i)\).
+
+Im zweiphasigen Lernprozess, bestehend aus der freien und der festen Phase, wird das Netzwerk trainiert. In der freien Phase mit \(\beta=0\) wird Inferenz durchgeführt, wodurch das Netzwerk zum freien Fixpunkt \(u^0\) konvergiert. Die feste Phase mit \(\beta>0\) bringt den festen Fixpunkt \(u^\beta\) hervor. Daraus lässt sich die Lernregel für das \gls{hopfieldnetzwerk} ableiten:
+
+\[\Delta W_{ij}\propto\frac{1}{\beta}\left(\rho(u_i^\beta)\rho(u_j^\beta)-\rho(u_i^0)\rho(u_j^0)\right)\]
+
+\[\Delta b_i\propto\frac{1}{\beta}\left(\rho(u_i^\beta)\rho(u_i^0)\right)\]
