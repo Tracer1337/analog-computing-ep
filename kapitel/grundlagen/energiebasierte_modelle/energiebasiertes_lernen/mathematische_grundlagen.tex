@@ -20,6 +20,6 @@ Die Kostenfunktion gibt die Qualität des Modells zu einem beliebigen \(\beta\) 
 
 Anhand dieser Formel lässt sich die Änderungsrate von \(\theta\) ableiten:
 
-\[\Delta\beta\propto -\frac{1}{\beta}\left(\frac{\partial F}{\partial \theta}(\theta,v,\beta,s_{(\theta,v)}^\beta)-\frac{\partial F}{\partial \theta}(\theta,v,\beta,s_{(\theta,v)}^0)\right)\]
+\[\Delta\theta\propto -\frac{1}{\beta}\left(\frac{\partial F}{\partial \theta}(\theta,v,\beta,s_{(\theta,v)}^\beta)-\frac{\partial F}{\partial \theta}(\theta,v,\beta,s_{(\theta,v)}^0)\right)\]
 
 Hieraus ergibt sich in der Praxis unter Anwendung am \gls{hopfieldnetzwerk} ein zweiphasiger Lernprozess. In der ersten Phase wird Inferenz durchgeführt, also ein Minimum der Energiefunktion gesucht und die Ausgabe des Netzes ausgelesen. In dieser Phase ist \(\beta=0\). Die zweite Phase setzt \(\beta>0\) und lenkt damit die Ausgabe des Netzes in Richtung des Zielwertes. Die versteckten Variablen des Netzes befinden sich zu Beginn dieser Phase im Gleichgewicht, die Störung an den Ausgabe-Variablen propagiert aber über Zeit zu den versteckten Variablen. Wird ein Netzwerk mit mehreren Ebenen betrachtet, so propagiert die Störung rückwärts durch das Netz, was auch als \gls{backpropagation} bezeichnet werden kann. \cite{Scellier2017}
