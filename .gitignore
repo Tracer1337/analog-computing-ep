@@ -24,3 +24,6 @@
 
 # IDEs
 .texpadtmp/
+
+matlab/slprj/
+*.drawio.bkp
