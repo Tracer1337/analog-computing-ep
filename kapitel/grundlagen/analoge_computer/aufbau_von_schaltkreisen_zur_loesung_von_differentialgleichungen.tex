@@ -4,7 +4,11 @@ Im Folgenden werden zwei wesentliche Ansätze zum Ableiten eines analogen Comput
 
 Um einen analogen Rechner mithilfe der \gls{kelvin_feedback_technique} zu konstruieren, muss die vorliegende Differenzialgleichungen so umgestellt werden, dass die höchsten Ableitungen alleine auf der linken Seite stehen. Die Ableitungen niedrigerem Grades können durch Integration der höchsten Ableitung gebildet werden, weshalb mithilfe der höchsten Ableitung die rechte Seite der Gleichung gebildet werden kann. Da die rechte Seite der Gleichung die höchste Ableitung darstellt, kann eine Rückkopplung hergestellt werden. \cite[vgl. S. 153 ff.]{Ulmann2022}
 
-Abbildung aus Ulmann2022 S. 154
+\begin{figure}[h]
+  \includegraphics[width=0.5\textwidth]{abbildungen/kelvin_feedback_technik.png}
+  \caption{Anwendung der \gls{kelvin_feedback_technique}. Quelle: \cite[S. 154]{Ulmann2022}}
+  \label{fig:Kelvin Feedback Technik}
+\end{figure}
 
 Die \gls{substitution_method} substituiert Teile einer Gleichung, um Gleichungen ersten Grades zu erhalten. Die Schaltungen der substituierten Gleichungen werden verbunden, um das Ergebnis zu erhalten. Die Anwendung dieser Methode führt aber zu Schwierigkeiten beim Umgang mit Initialwerten ungleich null und ist umständlich für reale Anwendungen. \cite[vgl. S. 155 ff.]{Ulmann2022}
 
@@ -22,10 +26,18 @@ Unter Anwendung der \gls{kelvin_feedback_technique} ergibt sich folgende Gleichu
 
 Der Schaltkreis zur Lösung von \(-(dy'+sy)\) kann wie folgt gebildet werden:
 
-Ulmann2022, Fig. 8.11. S. 170
+\begin{figure}[h]
+  \includegraphics[width=0.5\textwidth]{abbildungen/feder_masse_daempfer.png}
+  \caption{Quelle: \cite[S. 170]{Ulmann2022}}
+  \label{fig:Feder-Masse-Dämpfer System}
+\end{figure}
 
 Abschließend muss nur noch die Rückkopplung zu \(y''\) hergestellt werden:
 
-Ulmann2022, Fig. 8.12. S. 170
+\begin{figure}[h]
+  \includegraphics[width=0.5\textwidth]{abbildungen/feder_masse_daempfer_mit_rueckkopplung.png}
+  \caption{Quelle: \cite[S. 170]{Ulmann2022}}
+  \label{fig:Feder-Masse-Dämpfer System mit Rückkopplung}
+\end{figure}
 
 Zur Berechnung der realen Werte müssen die berechneten Werte entsprechend skaliert werden. Die Informationen über Maximalwerte von \(y\), \(y'\) und \(y''\) ist dafür notwendig.
