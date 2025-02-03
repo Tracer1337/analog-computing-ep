@@ -1,8 +1,8 @@
-\subsubsection{Aufbau von Schaltkreisen zur Lösung von Differenzialgleichungen}
+\subsubsection{Aufbau von Schaltkreisen zur Lösung von Differentialgleichungen}
 
-Im Folgenden werden zwei wesentliche Ansätze zum Ableiten eines analogen Computers von einer Reihe an Differenzialgleichungen vorgestellt: die \gls{kelvin_feedback_technique} sowie die \gls{substitution_method}
+Im Folgenden werden zwei wesentliche Ansätze zum Ableiten eines analogen Computers von einer Reihe an Differentialgleichungen vorgestellt: die \gls{kelvin_feedback_technique} sowie die \gls{substitution_method}
 
-Um einen analogen Rechner mithilfe der \gls{kelvin_feedback_technique} zu konstruieren, muss die vorliegende Differenzialgleichungen so umgestellt werden, dass die höchsten Ableitungen alleine auf der linken Seite stehen. Die Ableitungen niedrigerem Grades können durch Integration der höchsten Ableitung gebildet werden, weshalb mithilfe der höchsten Ableitung die rechte Seite der Gleichung gebildet werden kann. Da die rechte Seite der Gleichung die höchste Ableitung darstellt, kann eine Rückkopplung hergestellt werden. \cite[vgl. S. 153 ff.]{Ulmann2022}
+Um einen analogen Rechner mithilfe der \gls{kelvin_feedback_technique} zu konstruieren, muss die vorliegende Differentialgleichungen so umgestellt werden, dass die höchsten Ableitungen alleine auf der linken Seite stehen. Die Ableitungen niedrigerem Grades können durch Integration der höchsten Ableitung gebildet werden, weshalb mithilfe der höchsten Ableitung die rechte Seite der Gleichung gebildet werden kann. Da die rechte Seite der Gleichung die höchste Ableitung darstellt, kann eine Rückkopplung hergestellt werden. \cite[vgl. S. 153 ff.]{Ulmann2022}
 
 \begin{figure}[h]
   \includegraphics[width=0.5\textwidth]{abbildungen/kelvin_feedback_technik.png}
@@ -14,7 +14,7 @@ Die \gls{substitution_method} substituiert Teile einer Gleichung, um Gleichungen
 
 Der Wertebereich eines analogen Computers liegt i.d.R. bei \pm 1, weshalb Skalierung notwendig ist, um die berechneten Werte zu realen Werten umzuwandeln. Hierzu kann eine Zuordnung von maschinellen Variablen zu realen Variablen zum Einsatz kommen, jede Zuordnung ist dabei mit einem Skalierungsfaktor versehen. Die Skalierung von Zeit kann auch sinnvoll sein, um die Berechnungen zu beschleunigen. \cite[vgl. S. 162 ff.]{Ulmann2022}
 
-Als Beispiel wird, wie von \cite[S. 168 ff.]{Ulmann2022} beschrieben, hier ein Masse-Feder-Dämpfer System aufgeführt:
+Als Beispiel wird hier, wie von \cite[S. 168 ff.]{Ulmann2022} beschrieben, ein Masse-Feder-Dämpfer System aufgeführt:
 
 Ein Gewicht mit einer Masse \(m\) ist mit einer Feder mit Starrheit \(s\) und einem Dämpfer mit Dämpfungsfaktor \(d\) verbunden. Sei \(y\) die Position des Gewichts, so wirkt durch das Gewicht die Kraft \(my''\), durch den Dämpfer \(dy'\) und durch die Feder \(sy\). Die Summe aller Kräfte in einem geschlossenem physikalischen System sind gleich 0, deshalb gilt:
 
@@ -28,7 +28,7 @@ Der Schaltkreis zur Lösung von \(-(dy'+sy)\) kann wie folgt gebildet werden:
 
 \begin{figure}[h]
   \includegraphics[width=0.5\textwidth]{abbildungen/feder_masse_daempfer.png}
-  \caption{Quelle: \cite[S. 170]{Ulmann2022}}
+  \caption{Masse-Feder-Dämpfer System ohne Rückkopplung. Quelle: \cite[S. 170]{Ulmann2022}}
   \label{fig:Feder-Masse-Dämpfer System}
 \end{figure}
 
@@ -36,7 +36,7 @@ Abschließend muss nur noch die Rückkopplung zu \(y''\) hergestellt werden:
 
 \begin{figure}[h]
   \includegraphics[width=0.5\textwidth]{abbildungen/feder_masse_daempfer_mit_rueckkopplung.png}
-  \caption{Quelle: \cite[S. 170]{Ulmann2022}}
+  \caption{Vollständiges Masse-Feder-Dämpfer System. Quelle: \cite[S. 170]{Ulmann2022}}
   \label{fig:Feder-Masse-Dämpfer System mit Rückkopplung}
 \end{figure}
 
