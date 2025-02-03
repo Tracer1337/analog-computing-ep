@@ -2,7 +2,7 @@
 
 \textbf{TODO: Seitenzahlen für Quellenangaben}
 
-Ein Verfahren zum Trainieren \glspl{ebm} stellt das \gls{equilibriumpropagation} dar. In diesem Verfahren wird der Gradient einer Energiefunktion bestimmt und damit die Parameter des Modells angepasst. Die Vorhersagen des Modells werden aus dem Datenpunkt und den Parametern impliziert anstelle diese explizit zu definieren, weshalb sich dieses Verfahren besonders für die Anwendung auf analogen Computern eignet. \cite{Scellier2017}
+Ein Verfahren zum Trainieren \glspl{ebm} stellt das \gls{eqprop} dar. In diesem Verfahren wird der Gradient einer Energiefunktion bestimmt und damit die Parameter des Modells angepasst. Die Vorhersagen des Modells werden aus dem Datenpunkt und den Parametern impliziert anstelle diese explizit zu definieren, weshalb sich dieses Verfahren besonders für die Anwendung auf analogen Computern eignet. \cite{Scellier2017}
 
 Der Zustand des Modells wird durch den Vektor \(s\) dargestellt, \(v\) gibt die Eingabe-Variablen an und \(\theta\) steht für die Parameter des Modells. Die Zustandsvariable \(s\) verändert sich über Zeit, sodass die Energiefunktion \(E(\theta,v,s)\) minimiert wird. Neben der Energiefunktion wird auch eine Kosten-Funktion \(C(\theta,v,s)\) definiert, welche die Diskrepanz zwischen der Ausgabe des Modells und den Zielwerten angibt. Liefert die Energiefunktion für eine Konfiguration an Variablen eine kleinere Energie, so sollte auch der Wert der Kosten-Funktion geringer sein. Zusätzlich wird der Einfluss-Parameter \(\beta\) definiert, der als Skalierungsfaktor für die Kostenfunktion dient. Das Equilibrium Propagation definiert nun eine Gesamtenergiefunktion \(F\) als:
 
