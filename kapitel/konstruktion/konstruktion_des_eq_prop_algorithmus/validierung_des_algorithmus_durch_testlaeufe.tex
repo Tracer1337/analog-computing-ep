@@ -1,4 +1,4 @@
-\paragraph{Validierung des Algorithmus durch Testläufe}
+\subsubsection{Validierung des Algorithmus durch Testläufe}
 \label{chap:Validierung des Algorithmus durch Testläufe}
 
 Zuerst werden einige Durchläufe des bereits implementierten Netzwerks mit drei Neuronen durchgeführt. Als Hyperparameter werden \(\beta=1\) und \(\eta=0.5\) definiert, jeweils die Ausgaben zweier Durchläufe des \gls{c-ep} sind in Abbildung \ref{fig:C-EP Sim 1,2} dargestellt. Alle hier aufgeführten Simulationen werden mit 10 Zeiteinheiten für die freie und 10 für die feste Phase durchgeführt, was einer Dauer von 20 Zeiteinheiten pro Epoche entspricht. In Abbildung \ref{fig:C-EP Sim 1,2} sind zwei Durchläufe des Lernprozesses mit den genannten Hyperparametern dargestellt. Die Zielwerte \(\vec{d}=(0.3,0.8,0.5)\) findet das \gls{c-ep} innerhalb von ca. 1700 Zeiteinheiten, was 85 Epochen entspricht. Kurz nachdem die Zielwerte erreicht und die Kostenfunktion damit minimiert wurde, wurden die Gewichtsanpassungen chaotisch. Die zweite Simulation mit \(\vec{d}=(0,1,0)\) zeigt, dass sich das Netzwerk an die Grenzwerte \(0,1\) zwar annähert, diese aber nicht ohne größeren Fehler erreicht.

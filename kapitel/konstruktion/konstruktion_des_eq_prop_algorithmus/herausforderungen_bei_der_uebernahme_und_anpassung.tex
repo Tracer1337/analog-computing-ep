@@ -1,4 +1,4 @@
-\paragraph{Herausforderungen bei der Übernahme und Anpassung}
+\subsubsection{Herausforderungen bei der Übernahme und Anpassung}
 \label{chap:Herausforderungen bei der Übernahme und Anpassung}
 
 Eine Herausforderung bei der Umsetzung des \gls{c-ep} ist das Finden einer passenden Aktivierungsfunktion für die Zusammenarbeit mit der Lernregel \(\frac{dW_{ij}}{dt}\) und einer passenden Lernrate \(\eta\), welche eine effiziente Konvergenz der Gewichtungen gewährleistet. Für die bisher gewählte Aktivierungsfunktion, die logistische Funktion wie dargestellt in Abbildung \ref{fig:Graph der Aktivierungsfunktion}, gilt \(\rho(x) > 0\), weshalb auch die Lernregel immer positiv ist. Die Auswirkungen dessen sind in Abbildung \ref{fig:C-EP Non-Negative Aktivierungsfunktion} dargestellt, wobei als Zielwert für das Netzwerk \(\vec{d}=(0,0,0)\) gewählt wurde. Die Ausgabe des Netzwerks richtet sich zu Beginn der zweiten Phase offensichtlich in Richtung der Zielwerte, steigt aber nach einer kurzen Zeit stetig an, da der positive Einfluss der Gewichtungen den negativen der Kostenfunktion übersteigt.
