@@ -1,1 +1,3 @@
+\subsection{Herausforderungen und Lösungsansätze}
+
 Die hier genutzte Aktivierungsfunktion, eine Sigmoidfunktion (siehe Kapitel \ref{chap:Übernahme des Hopfield-Netzwerks}), nähert sich den Grenzwerten \(0\) bzw \(1\), was dazu führt, dass diese Werte im Netzwerk nicht fehlerfrei abgebildet werden können. Eine alternative Aktivierungsfunktion \(tanh\) wie in Kapitel \ref{chap:Validierung des Algorithmus durch Testläufe} kann zwar \(0\) abbilden, verschiebt den Grenzwert damit aber nur zu \(-1\). Als mögliche Lösung wurde ReLU genannt, die Integration dieser Funktion in das Netzwerk ist aber nicht gelungen, weshalb dieses Problem ungelöst bleibt.
