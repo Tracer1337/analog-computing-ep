@@ -19,34 +19,35 @@ Im Prozess der Verstärkung der Signale kann ein sog. \gls{drift} auftreten. Dad
 
 Um einen Summierer zu bilden, muss lediglich ein weiteres Eingangssignal zum Operationsverstärker hinzugefügt werden. Die Widerstände \(R_i\) bilden die Koeffizienten der Eingangssignale. Der Summierer bildet also die gewichtete Summe der Eingangssignale und gibt diese invertiert aus. \cite[vgl. S. 86]{Ulmann2022}
 
-\begin{figure}[h]
-  \includegraphics[width=0.25\textwidth]{abbildungen/symbol_summierer.png}
-  \caption{Symbol des Summierers. Quelle: \textit{Eigene Darstellung}}
-  \label{fig:Symbol Summierer}
-\end{figure}
-
 Wird der Feedback-Widerstand \(R_f\) durch einen Kondensator \(C\) ersetzt, wird die Summe der Eingangssignale über Zeit integriert. Man erhält also einen Integrierer. Durch ein Steuerelement \textit{IC} wird ein Initialwert festgelegt, der so lange ausgegeben wird, bis ein weiteres Steuerelement \textit{OP} betätigt wird. Im aktivierten Zustand wird so lange das Integral der Eingangssignale ausgegeben, bis der \textit{OP} Schalter erneut betätigt und der letzte gespeicherte Wert ausgegeben wird. \cite[vgl. S. 89 ff.]{Ulmann2022}
 
-\begin{figure}[h]
-  \includegraphics[width=0.25\textwidth]{abbildungen/symbol_integrierer.png}
-  \caption{Symbol des Integrierers. Quelle: \textit{Eigene Darstellung}}
-  \label{fig:Symbol Integrierer}
-\end{figure}
-
 Die Anwendung eines Koeffizienten am Operationsverstärker kann durch ein Potentiometer erfolgen, welches am Eingangssignal angeschlossen ist. Das somit erhaltene Koeffizient-Potentiometer lässt sich über einen speziellen Zustand des Analogrechners, dem \textit{Potentiometer Set} (kurz: \textit{Pot Set}) setzen. In diesem Zustand werden alle Recheneinheiten des Analogrechners deaktiviert, sodass das rohe Eingangssignal weitergeleitet wird. In großen analogen Rechnern werden Potentiometer durch Servomotoren oder in hybriden Rechnern digital gesteuert. \cite[vgl. S. 92 ff.]{Ulmann2022}
-
-\begin{figure}[h]
-  \includegraphics[width=0.25\textwidth]{abbildungen/symbol_potentiometer.png}
-  \caption{Symbol des Potentiometers. Quelle: \textit{Eigene Darstellung}}
-  \label{fig:Symbol Potentiometer}
-\end{figure}
 
 Ein Funktionsgenerator kann genutzt werden, um eine beliebige Funktion \(f(x,...)\) abzubilden. Für analoge Rechner ist das aber eine komplexe Aufgabe, weshalb sich für diesen Anwendungsfall hybride Systeme besonders eignen. Als mögliche analoge Ansätze bieten sich der servogetriebene Funktionsgenerator, der Kurvenfolger oder der Fotoformer an \cite[vgl. S. 97 ff.]{Ulmann2022}.
 
 \begin{figure}[h]
-  \includegraphics[width=0.25\textwidth]{abbildungen/symbol_funktionsgenerator.png}
-  \caption{Symbol des Funktionsgenerators. Quelle: \textit{Eigene Darstellung}}
-  \label{fig:Symbol Funktionsgenerator}
+  \centering
+  \begin{subfigure}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{abbildungen/symbol_summierer.png}
+    \caption{Summierer}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{abbildungen/symbol_integrierer.png}
+    \caption{Integrierer}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{abbildungen/symbol_potentiometer.png}
+    \caption{Potentiometer}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.2\textwidth}
+    \includegraphics[width=\textwidth]{abbildungen/symbol_funktionsgenerator.png}
+    \caption{Funktionsgenerator}
+  \end{subfigure}
+  \caption{Symbole zur Darstellung eines analogen Computers. Quelle: \textit{Eigene Darstellung}}
+  \label{fig:Symbole analoger Computer}
 \end{figure}
 
 Die im ersten Augenblick einfache Multiplizierung ist auf analogen Rechnern komplex zu implementieren \cite[vgl. S. 105]{Ulmann2022}. Moderne analoge Rechner greifen typischerweise auf die Gilbert Zelle zurück. Die Berechnung einer Division bzw. Quadratwurzel kann durch modifizierte Multiplikatoren erfolgen. \cite[S. 114 f.]{Ulmann2022}

@@ -1,4 +1,5 @@
 \subsubsection{Technische Herausforderungen und Lösungsansätze}
+\label{chap:Technische Herausforderungen und Lösungsansätze}
 
 Zur Umsetzung der Gewichte wurden bisher Integratoren genutzt, welche während der festen Phase mit einem konstanten Eingabewert \(0\) verschaltet werden und somit ihren Wert behalten. Nach \citeauthor{Ulmann2022} ist die Nutzung von Integratoren als temporäre Speicherzellen auch ein gängiges Vorgehen (\cite[vgl. S. 92]{Ulmann2022}), bei der Anwendung auf größere Netzwerke und damit längeren Inferenz-Phasen kann dieser Ansatz praktisch aber anhand der Natur von Kondensatoren, durch Leckströme ihre Ladung zu verlieren, zu Problemen führen. Wie in Kapitel \ref{chap:Auswahl der Referenzarbeit für das Netzwerkdesign} beschrieben, befassten sich bereits einige Arbeiten mit der Implementierung eines \gls{hopfieldnetzwerk} mit analogen Bauteilen. Eine häufig auftretende Bauweise beinhaltet den Memristor als zentrale Komponente, weshalb dieser auch hier zum Einsatz kommen könnte. So kann möglicherweise der akkumulierte Wert der Integratoren genutzt werden, um Memristoren zu programmieren, welche die Gewichte für die freie Phase speichern.
 
