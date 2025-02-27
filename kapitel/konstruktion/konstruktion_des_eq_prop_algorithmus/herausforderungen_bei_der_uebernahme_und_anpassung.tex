@@ -1,7 +1,7 @@
 \subsubsection{Herausforderungen bei der Übernahme und Anpassung}
 \label{chap:Herausforderungen bei der Übernahme und Anpassung}
 
-Eine Herausforderung bei der Umsetzung des \gls{c-ep} ist das Finden einer passenden Aktivierungsfunktion für die Zusammenarbeit mit der Lernregel \(\frac{dW_{ij}}{dt}\) und einer passenden Lernrate \(\eta\), welche eine effiziente Konvergenz der Gewichtungen gewährleistet. Für die bisher gewählte Aktivierungsfunktion, die logistische Funktion wie dargestellt in Abbildung \ref{fig:Graph der Aktivierungsfunktion}, gilt \(\rho(x) > 0\), weshalb auch die Lernregel immer positiv ist. Die Auswirkungen dessen sind in Abbildung \ref{fig:C-EP Non-Negative Aktivierungsfunktion} dargestellt, wobei als Zielwert für das Netzwerk \(\vec{d}=(0,0,0)\) gewählt wurde. Die Ausgabe des Netzwerks richtet sich zu Beginn der zweiten Phase offensichtlich in Richtung der Zielwerte, steigt aber nach einer kurzen Zeit stetig an, da der positive Einfluss der Gewichtungen den negativen der Kostenfunktion übersteigt.
+Eine Herausforderung bei der Umsetzung des \ac{c-ep} ist das Finden einer passenden Aktivierungsfunktion für die Zusammenarbeit mit der Lernregel \(\frac{dW_{ij}}{dt}\) und einer passenden Lernrate \(\eta\), welche eine effiziente Konvergenz der Gewichtungen gewährleistet. Für die bisher gewählte Aktivierungsfunktion, die logistische Funktion wie dargestellt in Abbildung \ref{fig:Graph der Aktivierungsfunktion}, gilt \(\rho(x) > 0\), weshalb auch die Lernregel immer positiv ist. Die Auswirkungen dessen sind in Abbildung \ref{fig:C-EP Non-Negative Aktivierungsfunktion} dargestellt, wobei als Zielwert für das Netzwerk \(\vec{d}=(0,0,0)\) gewählt wurde. Die Ausgabe des Netzwerks richtet sich zu Beginn der zweiten Phase offensichtlich in Richtung der Zielwerte, steigt aber nach einer kurzen Zeit stetig an, da der positive Einfluss der Gewichtungen den negativen der Kostenfunktion übersteigt.
 
 \begin{figure}[h]
   \includegraphics[width=0.5\textwidth]{abbildungen/sigmoid_funktion.png}
@@ -20,11 +20,11 @@ Eine Herausforderung bei der Umsetzung des \gls{c-ep} ist das Finden einer passe
     \includegraphics[width=\textwidth]{abbildungen/c_ep_non_negative_activation_ausgabe.png}
     \caption{Ausgabe des Modells}
   \end{subfigure}
-  \caption{Auswirkungen einer nicht-negativen Aktivierungsfunktion auf das \gls{c-ep}. Quelle: \textit{Eigene Darstellung}}
+  \caption{Auswirkungen einer nicht-negativen Aktivierungsfunktion auf das \ac{c-ep}. Quelle: \textit{Eigene Darstellung}}
   \label{fig:C-EP Non-Negative Aktivierungsfunktion}
 \end{figure}
 
-Die Dauer der beiden Phasen des \gls{c-ep} wurde durch die Konvergenz dieser definiert. So soll die erste Phase durchgeführt werden bis das Netzwerk einen Fixpunkt findet, für die zweite Phase müssen Fixpunkte des Netzwerkes und der Parameter gefunden werden \cite[vgl. S. 3]{Ernoult2020}. Die Bestimmung sinnvoller Werte für die Dauer dieser Phasen stellt die Umsetzung des Lernprozesses vor eine weitere Herausforderung. Wie bereits in \ref{chap:Simulation des angepassten Netzwerks} gezeigt, propagiert das implementierte \gls{hopfieldnetzwerk} mit beliebigem \(\beta\) zuverlässig innerhalb von weniger als zehn Zeiteinheiten zu einem Fixpunkt. Gleiches sollte auf die feste Phase zutreffen, dies ist aber, wie in Abbildung \ref{fig:C-EP Konvergenz Problem} gezeigt, nicht der Fall. Eine mögliche Ursache hierfür stellt erneut die Auswahl der Aktivierungsfunktion dar, da, wie aus Abbildung \ref{fig:Graph der Aktivierungsfunktion} abzulesen, \(\rho(x) > 0\) bzw. \(\dot{\rho}(x) > 0\) und somit \(\frac{dW_{ij}}{dt} > 0\) gilt. Eine Simulation mit \(\vec{d}=(0.8,0.8,0.8)\) und \(\eta=0.1\) zeigt die valide Anpassung der Gewichtungen bis zu einem Zeitpunkt \(t\approx250\) aber die anschließende fehlende Konvergenz der Parameter.
+Die Dauer der beiden Phasen des \ac{c-ep} wurde durch die Konvergenz dieser definiert. So soll die erste Phase durchgeführt werden bis das Netzwerk einen Fixpunkt findet, für die zweite Phase müssen Fixpunkte des Netzwerkes und der Parameter gefunden werden \cite[vgl. S. 3]{Ernoult2020}. Die Bestimmung sinnvoller Werte für die Dauer dieser Phasen stellt die Umsetzung des Lernprozesses vor eine weitere Herausforderung. Wie bereits in \ref{chap:Simulation des angepassten Netzwerks} gezeigt, propagiert das implementierte \ac{hnn} mit beliebigem \(\beta\) zuverlässig innerhalb von weniger als zehn Zeiteinheiten zu einem Fixpunkt. Gleiches sollte auf die feste Phase zutreffen, dies ist aber, wie in Abbildung \ref{fig:C-EP Konvergenz Problem} gezeigt, nicht der Fall. Eine mögliche Ursache hierfür stellt erneut die Auswahl der Aktivierungsfunktion dar, da, wie aus Abbildung \ref{fig:Graph der Aktivierungsfunktion} abzulesen, \(\rho(x) > 0\) bzw. \(\dot{\rho}(x) > 0\) und somit \(\frac{dW_{ij}}{dt} > 0\) gilt. Eine Simulation mit \(\vec{d}=(0.8,0.8,0.8)\) und \(\eta=0.1\) zeigt die valide Anpassung der Gewichtungen bis zu einem Zeitpunkt \(t\approx250\) aber die anschließende fehlende Konvergenz der Parameter.
 
 \begin{figure}[h]
   \centering
@@ -46,11 +46,11 @@ Die Dauer der beiden Phasen des \gls{c-ep} wurde durch die Konvergenz dieser def
   \label{fig:C-EP Konvergenz Problem}
 \end{figure}
 
-Um Fehler bei der Auswahl der Aktivierungsfunktion oder der Übernahme der Lernregel auszuschließen, wird im Folgenden die von \citeauthor{Ernoult2020} ursprünglich für \gls{c-ep} vorgestellte Lernregel verwendet:
+Um Fehler bei der Auswahl der Aktivierungsfunktion oder der Übernahme der Lernregel auszuschließen, wird im Folgenden die von \citeauthor{Ernoult2020} ursprünglich für \ac{c-ep} vorgestellte Lernregel verwendet:
 
 \[\Delta^{C-EP}_{Wnn+1}(\beta,\eta,t)=\frac{1}{\beta}\left(\sigma\left(s^{n,\beta,\eta}_{t+1}\right)\sigma\left(s^{n+1,\beta,\eta}_{t+1}\right)^\intercal-\sigma\left(s^{n,\beta,\eta}_{t}\right)\sigma\left(s^{n+1,\beta,\eta}_{t}\right)^\intercal\right)\]
 
-Angewandt auf das hier genutzte \gls{hopfieldnetzwerk} und unter Beachtung der Lernrate \(\eta\) ergibt sich:
+Angewandt auf das hier genutzte \ac{hnn} und unter Beachtung der Lernrate \(\eta\) ergibt sich:
 
 \[\Delta^{C-EP}_{W_{ij}}(\eta,t)\propto\eta\left(\rho(u^{\beta}_{t+1,i})\rho(u^{\beta}_{t+1,j})-\rho(u^{\beta}_{t,i})\rho(u^{\beta}_{t,j})\right)\]
 

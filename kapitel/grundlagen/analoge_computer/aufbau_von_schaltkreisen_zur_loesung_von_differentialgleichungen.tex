@@ -1,10 +1,10 @@
 \subsubsection{Aufbau von Schaltkreisen zur Lösung von Differentialgleichungen}
 
-Im Folgenden werden zwei wesentliche Ansätze zum Ableiten eines analogen Computers von einer Reihe an Differentialgleichungen vorgestellt: die \gls{kelvin_feedback_technique} sowie die \gls{substitution_method}.
+Im Folgenden werden zwei wesentliche Ansätze zum Ableiten eines analogen Computers von einer Reihe an Differentialgleichungen vorgestellt: die Kelvin Feedback Technik sowie die Substitutionsmethode.
 
-Um einen analogen Rechner mithilfe der \gls{kelvin_feedback_technique} zu konstruieren, muss die vorliegende Differentialgleichungen so umgestellt werden, dass die höchsten Ableitungen alleine auf der linken Seite stehen. Die Ableitungen niedrigerem Grades können durch Integration der höchsten Ableitung gebildet werden, weshalb mithilfe der höchsten Ableitung die rechte Seite der Gleichung gebildet werden kann. Da die rechte Seite der Gleichung die höchste Ableitung darstellt, kann eine Rückkopplung hergestellt werden. \cite[vgl. S. 153 ff.]{Ulmann2022}
+Um einen analogen Rechner mithilfe der Kelvin Feedback Technik zu konstruieren, muss die vorliegende Differentialgleichungen so umgestellt werden, dass die höchsten Ableitungen alleine auf der linken Seite stehen. Die Ableitungen niedrigerem Grades können durch Integration der höchsten Ableitung gebildet werden, weshalb mithilfe der höchsten Ableitung die rechte Seite der Gleichung gebildet werden kann. Da die rechte Seite der Gleichung die höchste Ableitung darstellt, kann eine Rückkopplung hergestellt werden. \cite[vgl. S. 153 ff.]{Ulmann2022}
 
-Die \gls{substitution_method} substituiert Teile einer Gleichung, um Gleichungen ersten Grades zu erhalten. Die Schaltungen der substituierten Gleichungen werden verbunden, um das Ergebnis zu erhalten. Die Anwendung dieser Methode führt aber zu Schwierigkeiten beim Umgang mit Initialwerten ungleich null und ist umständlich für reale Anwendungen. \cite[vgl. S. 155 ff.]{Ulmann2022}
+Die Substitutionsmethode substituiert Teile einer Gleichung, um Gleichungen ersten Grades zu erhalten. Die Schaltungen der substituierten Gleichungen werden verbunden, um das Ergebnis zu erhalten. Die Anwendung dieser Methode führt aber zu Schwierigkeiten beim Umgang mit Initialwerten ungleich null und ist umständlich für reale Anwendungen. \cite[vgl. S. 155 ff.]{Ulmann2022}
 
 Der Wertebereich eines analogen Computers liegt i.d.R. bei \pm 1, weshalb Skalierung notwendig ist, um die berechneten Werte zu realen Werten umzuwandeln. Hierzu kann eine Zuordnung von maschinellen Variablen zu realen Variablen zum Einsatz kommen, jede Zuordnung ist dabei mit einem Skalierungsfaktor versehen. Die Skalierung von Zeit kann auch sinnvoll sein, um die Berechnungen zu beschleunigen. \cite[vgl. S. 162 ff.]{Ulmann2022}
 
@@ -14,7 +14,7 @@ Ein Gewicht mit einer Masse \(m\) ist mit einer Feder mit Starrheit \(s\) und ei
 
 \[my''+dy'+sy=0\]
 
-Unter Anwendung der \gls{kelvin_feedback_technique} ergibt sich folgende Gleichung:
+Unter Anwendung der Kelvin Feedback Technik ergibt sich folgende Gleichung:
 
 \[y''=\frac{-(dy'+sy)}{m}\]
 
