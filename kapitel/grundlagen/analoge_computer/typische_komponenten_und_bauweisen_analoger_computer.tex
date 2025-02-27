@@ -4,11 +4,11 @@
 Der Operationsverstärker gilt als zentraler Baustein für die meisten Komponenten eines analogen Rechners. Er bildet die Differenz aus zwei Eingangssignalen und verstärkt dieses Signal anschließend. Werden ein freies und ein geerdetes Eingangssignal genutzt, so wird nur das Freie verstärkt. Durch ein Rückkopplungs-Signal gelingt es dem Operationsverstärker einen Teil der Stromverstärkung aufzugeben, um Stabilität zu gewinnen. Dieses Signal verbindet die Ausgabe der Komponente mit seiner Eingabe, wobei diese beiden Werte miteinander summiert werden. Ein wichtiges Merkmal dieser Komponente ist außerdem, dass das Vorzeichen der Eingabe gedreht wird. (\cite[vgl. S. 73 f.]{Ulmann2022})
 
 \begin{figure}[h]
-  \label{fig:Operationsverstärker mit Rückkopplung}
   \caption{Operationsverstärker mit Rückkopplung}
   \includegraphics[width=0.5\textwidth]{abbildungen/opamp_mit_rueckkopplung.png}
   \\
   Quelle: \cite[S. 76]{Ulmann2022}
+  \label{fig:Operationsverstärker mit Rückkopplung}
 \end{figure}
 
 Die Formel zu Berechnung der Ausgangsspannung lautet damit wie folgt:
@@ -28,7 +28,6 @@ Die Anwendung eines Koeffizienten am Operationsverstärker kann durch ein Potent
 Ein Funktionsgenerator kann genutzt werden, um eine beliebige Funktion \(f(x,...)\) abzubilden. Für analoge Rechner ist das aber eine komplexe Aufgabe, weshalb sich für diesen Anwendungsfall hybride Systeme besonders eignen. Als mögliche analoge Ansätze bieten sich der servogetriebene Funktionsgenerator, der Kurvenfolger oder der Fotoformer an (\cite[vgl. S. 97 ff.]{Ulmann2022}).
 
 \begin{figure}[h]
-  \label{fig:Symbole analoger Computer}
   \caption{Symbole zur Darstellung eines analogen Computers}
   \centering
   \begin{subfigure}[b]{0.2\textwidth}
@@ -52,6 +51,7 @@ Ein Funktionsgenerator kann genutzt werden, um eine beliebige Funktion \(f(x,...
   \end{subfigure}
   \\
   Quelle: Eigene Darstellung
+  \label{fig:Symbole analoger Computer}
 \end{figure}
 
 Die im ersten Augenblick einfache Multiplizierung ist auf analogen Rechnern komplex zu implementieren (\cite[vgl. S. 105]{Ulmann2022}). Moderne analoge Rechner greifen typischerweise auf die Gilbert Zelle zurück. Die Berechnung einer Division bzw. Quadratwurzel kann durch modifizierte Multiplikatoren erfolgen. (\cite[S. 114 f.]{Ulmann2022})
@@ -67,17 +67,16 @@ Die im Jahr 2020 gegründete anabrid GmbH hat es sich zum Ziel gesetzt, analoge 
 Das \ac{that} orientiert sich am historischen Design der analogen Computer und arbeitet demnach mit Patchkabeln, mit denen Rechenelemente verschaltet werden (siehe Abbildung \ref{fig:The Analog Thing}). Dabei arbeitet das Gerät mit 10 Volt und in einem Wertebereich von \pm 1. Fällt eine Spannung außerhalb dieses Wertebereichs, fällt das Gerät in den sog. "`Overload"'-Modus und signalisiert dies über eine LED. Außerdem bietet das Gerät Anschlüsse für einige Variablen, welche als Ein- oder Ausgaben zur Auswertung oder Verschaltung mit weiteren analogen Rechnern genutzt werden können (\cite{TheAnalogThingDocs}).
 
 \begin{figure}[h]
-  \label{fig:The Analog Thing}
   \caption{The Analog Thing des Herstellers anabrid GmbH}
   \includegraphics[width=0.75\textwidth]{abbildungen/the_analog_thing.jpg}
   \\
   Quelle: \cite{TheAnalogThingDocs}
+  \label{fig:The Analog Thing}
 \end{figure}
 
 Wie in Abbildung \ref{fig:The Analog Thing} zu sehen, bietet das \ac{that} die grundlegenden Komponenten wie Potentiometer, Summierer, Integrierer, Multiplizierer und Komparatoren an. Diese Komponenten reichen bereits aus, um Probleme wie die Euler-Spirale zu lösen (Siehe Abbildung \ref{fig:THAT Euler Spirale})
 
 \begin{figure}[h]
-  \label{fig:THAT Euler Spirale}
   \caption{Simulation der Euler-Spirale auf einem \ac{that}}
   \begin{subfigure}{.2\textwidth}
     \centering
@@ -89,6 +88,7 @@ Wie in Abbildung \ref{fig:The Analog Thing} zu sehen, bietet das \ac{that} die g
   \end{subfigure}
   \\
   Quelle: \cite{TheAnalogThingDocs}
+  \label{fig:THAT Euler Spirale}
 \end{figure}
 
 Das neueste Modell des Herstellers Anabrid, der "`lucidac"', lasst sich digital über Software progammieren, wodurch der manuelle Aufwand durch die Verkabelung des Rechners wegfällt (\cite[vgl.]{AnabridLucidAC2025}). Dafür wurde eine Python-Bibliothek entwickelt, die durch Befehle wie "`connect(a, b)"' Verbindungen zwischen Komponenten herstellen kann (\cite[vgl.]{AnabridLucipy}). Um die software-gesteuerte Programmierung zu ermöglichen, verwendet der lucidac eine Verbindungs-Matrix, welche der Verbindung aller Komponenten ein Gewicht zuweist. Wird ein Wert innerhalb der Matrix von null auf \zb eins geändert, so wird eine neue (gewichtete) Verbindung hergestellt (\cite{AnabridLucidAC2025}). Seien \(C^{in}\) bzw. \(C^{out}\) die Ein- bzw. Ausgaben der Komponenten und \(M\) die gewichteten Verbindung zwischen Komponenten, so gilt:

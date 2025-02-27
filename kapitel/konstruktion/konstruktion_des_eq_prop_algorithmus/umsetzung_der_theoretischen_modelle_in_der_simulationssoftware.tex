@@ -8,7 +8,6 @@ Die Integratoren zur Repräsentation der Gewichte müssen dafür zurücksetzbar 
 Durch die Zeitsteuerung des Lernprozesses ist zu jeder Zeit nur eine der beiden Phasen aktiv. Aus diesem Grund müssen die Zustände des Netzwerks nach der freien Phase zwischengespeichert werden, um sie nach Abschluss der festen Phase weiterverarbeiten zu können. Im hier vorgestellten Modell (siehe Anhang \ref{app:Umsetzung des Equilibrium-Propagation in Simulink}), ist dieser Mechanismus über den "`Memory"'-Block in Simulink zusammen mit einer Rückkopplung seiner Ausgabe zum vorgeschalteten Komparator gelöst. Die damit erzeugte Ausgabe aus Abbildung \ref{fig:Output EqProp 1} zeigt die Wirksamkeit der Zeitsteuerung, da alle zwanzig Sekunden für beide Phasen ein Fixpunkt des Netzwerks gefunden wird. Aus den Graphen wird aber auch deutlich, dass die Simulation durch die Nutzung der "`Memory"'-Blöcke mit diskreten Werten arbeitet, wodurch sich dieser Ansatz nicht für die Umsetzung auf analogen Computern eignet. Die Dokumentation des \ac{that} beschreibt zwar den "`HALT"'-Modus, wodurch die Integratoren ihren letzten Wert behalten und damit scheinbar für diesen Prozess genutzt werden können, dieser Modus soll aber laut der Dokumentation primär für Diagnostik und Fehlerbehebung genutzt werden \ua aus dem Grund, dass die gespeicherten Werte über Zeit an Genauigkeit verlieren (\cite[vgl.]{TheAnalogThingDocs}).
 
 \begin{figure}[h]
-  \label{fig:Output EqProp 1}
   \caption{Ausgabe des zweiphasigen Lernprozesses des \ac{ep} im ersten vorgestellten Ansatz}
   \centering
   \begin{subfigure}[b]{0.5\textwidth}
@@ -22,6 +21,7 @@ Durch die Zeitsteuerung des Lernprozesses ist zu jeder Zeit nur eine der beiden 
   \end{subfigure}
   \\
   Quelle: Eigene Darstellung
+  \label{fig:Output EqProp 1}
 \end{figure}
 
 In einer Arbeit von \citeauthor{Kendall2020} wurde bereits gezeigt, dass \ac{ep} in einer analogen Simulation in Zusammenarbeit mit herkömmlicher Software implementiert werden kann. \citeauthor{Kendall2020} stellte dafür einen Ansatz mithilfe der Simulationssoftware SPICE sowie Python vor, wobei innerhalb von SPICE das neuronale Netzwerk implementiert und damit die Fixpunkte der beiden Phasen gefunden wurden. Für die restlichen Bestandteile des Lernprozesses, wie die Berechnung der Fehlerfunktion oder die Anwendung der Lernregel, kam Python als digitaler Co-Prozessor zum Einsatz (\cite[vgl. S. 27]{Kendall2020}). Die Entwicklung eines hybriden Rechners ist aber nicht Teil dieser Arbeit, weshalb dieser Ansatz nicht weiter verfolgt wird.
