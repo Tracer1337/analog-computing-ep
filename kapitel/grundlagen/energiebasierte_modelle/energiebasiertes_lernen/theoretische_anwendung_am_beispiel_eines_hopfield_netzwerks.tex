@@ -1,7 +1,7 @@
 \paragraph{Theoretische Anwendung am Beispiel eines Hopfield-Netzwerks}
 \label{chap:Theoretische Anwendung am Beispiel eines Hopfield-Netzwerks}
 
-Wie von \cite{Scellier2017} bereits beschrieben, ist \ac{ep} auf das \ac{hnn} anwendbar. Für diese Anwendung muss zuerst die Energiefunktion des Modells bestimmt werden. Seien \(u\) die Neuronen des Netzwerks, \(W_{i,j}\) die Gewichtung der Verbindung zweier Neuronen und \(b_i\) der Bias eines Neuron, so können die Parameter des Modells als \(\theta=(W,b)\) definiert werden. Die Aktivierungsfunktion ist definiert als \(\rho(u_i)\). Zusätzlich werden die Neuronen aufgeteilt in Eingabeneuronen \(x\), versteckte Neuronen \(h\) und Ausgabeneuronen \(y\), die Gesamtheit der Neuronen im Netzwerk ist damit \(u=\{x,h,y\}\). Mit diesen Variablen kann nun die Hopfield-Energiefunktion aufgestellt werden:
+Wie von \cite{Scellier2017} bereits beschrieben, ist \ac{ep} auf das \ac{hnn} anwendbar. Für diese Anwendung muss zuerst die Energiefunktion des Modells bestimmt werden. Seien \(u\) die Neuronen des Netzwerks, \(W_{i,j}\) die Gewichte der Verbindung zweier Neuronen und \(b_i\) der Bias eines Neuron, so können die Parameter des Modells als \(\theta=(W,b)\) definiert werden. Die Aktivierungsfunktion ist definiert als \(\rho(u_i)\). Zusätzlich werden die Neuronen aufgeteilt in Eingabeneuronen \(x\), versteckte Neuronen \(h\) und Ausgabeneuronen \(y\), die Gesamtheit der Neuronen im Netzwerk ist damit \(u=\{x,h,y\}\). Mit diesen Variablen kann nun die Hopfield-Energiefunktion aufgestellt werden:
 
 \[E(u):=\frac{1}{2}\sum_iu_i^2-\frac{1}{2}\sum_{i\neq{j}}W_{ij}\rho(u_i)\rho(u_j)-\frac{1}{2}\sum_ib_i\rho(u_i)\]
 
