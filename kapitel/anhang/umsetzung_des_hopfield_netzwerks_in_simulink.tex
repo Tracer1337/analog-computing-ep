@@ -4,17 +4,21 @@
 Ein \ac{hnn} mit zwei Neuronen wurde nach der von \cite{Scellier2017} vorgestellten Dynamik in Simulink modelliert und ist in Abbildung \ref{fig:Hopfield-Netzwerk 2 Neuronen Simulink} dargestellt.
 
 \begin{figure}[h]
-  \includegraphics[width=\textwidth]{abbildungen/hnn_2_neurons_simulink.png}
-  \caption{Umsetzung eines \ac{hnn}s mit zwei Neuronen in Simulink. Quelle: \textit{Eigene Darstellung}}
   \label{fig:Hopfield-Netzwerk 2 Neuronen Simulink}
+  \caption{Umsetzung eines \ac{hnn}s mit zwei Neuronen in Simulink}
+  \includegraphics[width=\textwidth]{abbildungen/hnn_2_neurons_simulink.png}
+  \\
+  Quelle: Eigene Darstellung
 \end{figure}
 
 Ein auf drei Neuronen skaliertes Modell ist in Abbildung \ref{fig:Hopfield-Netzwerk 3 Neuronen Simulink} dargestellt. Hier wurde auch die Kostenfunktion des \ac{ep} umgesetzt, nur der Bias wurde zur Übersichtlichkeit weggelassen.
 
 \begin{figure}[h]
-  \includegraphics[width=\textwidth]{abbildungen/hnn_without_bias_with_cost_3_neurons_simulink.png}
-  \caption{Umsetzung eines \ac{hnn}s mit drei Neuronen in Simulink. Quelle: \textit{Eigene Darstellung}}
   \label{fig:Hopfield-Netzwerk 3 Neuronen Simulink}
+  \caption{Umsetzung eines \ac{hnn}s mit drei Neuronen in Simulink}
+  \includegraphics[width=\textwidth]{abbildungen/hnn_without_bias_with_cost_3_neurons_simulink.png}
+  \\
+  Quelle: Eigene Darstellung
 \end{figure}
 
 Zur Vereinfachung der Arbeit mit dem \ac{hnn} in Simulink wurde dieses für die Nutzung von Vektoren und Matrizen umgeformt, wie in Abbildung \ref{fig:Hopfield-Netzwerk Final Simulink} dargestellt. Die Gewichte sind als Integratoren für skalare Werte vorhanden und werden über einen Matlab-Funktionsblock zu einer Gewichtsmatrix umgeformt.
@@ -22,9 +26,11 @@ Zur Vereinfachung der Arbeit mit dem \ac{hnn} in Simulink wurde dieses für die 
 Anhand des Funktionsblocks "`dynamics"' unterhalb des Netzwerks kann die Funktionsweise dessen validiert werden. Da die Ausgaben "`Output"' und "`Output1"' übereinstimmen, wird gezeigt, dass das \ac{hnn} eine korrekte Analogie zur Dynamik \(\frac{ds}{dt}\) darstellt.
 
 \begin{figure}[h]
-  \includegraphics[width=\textwidth]{abbildungen/hnn_with_proof_simulink.png}
-  \caption{Finales Modell des \ac{hnn} in Simulink mit einem Funktionsblock zur Validierung der Funktionsweise. Quelle: \textit{Eigene Darstellung}}
   \label{fig:Hopfield-Netzwerk Final Simulink}
+  \caption{Finales Modell des \ac{hnn} in Simulink mit einem Funktionsblock zur Validierung der Funktionsweise}
+  \includegraphics[width=\textwidth]{abbildungen/hnn_with_proof_simulink.png}
+  \\
+  Quelle: Eigene Darstellung
 \end{figure}
 
 Es folgt der Quellcode für die Funktionsblöcke "`dynamics"', "`sigmoid"' und "`sigmoid derivative"' sowie zur Erstellung der Gewichtsmatrix.

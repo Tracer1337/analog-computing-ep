@@ -14,15 +14,19 @@ Die von Simulink vorgegebenen Blöcke sind in Bibliotheken aufgeteilt. In "`Sour
 Wie mithilfe der genannten Blöcke das Masse-Pfeder-Dämpfer System aus Abbildung \ref{fig:Feder-Masse-D\"ampfer System mit R\"uckkopplung} modelliert werden kann, wurde bereits von \citeauthor{Ulmann2022} gezeigt:
 
 \begin{figure}[h]
-  \includegraphics[width=\textwidth]{abbildungen/simulink_beispiel.png}
-  \caption{Simulation eines Masse-Feder-Dämpfer Systems in Simulink. Quelle: \cite[S. 241]{Ulmann2022}}
   \label{fig:Masse-Feder-Dämpfer Simulink}
+  \caption{Simulation eines Masse-Feder-Dämpfer Systems in Simulink}
+  \includegraphics[width=\textwidth]{abbildungen/simulink_beispiel.png}
+  \\
+  Quelle: \cite[S. 241]{Ulmann2022}
 \end{figure}
 
 Zusätzlich zur Standard-Bibliothek lässt sich Simulink durch weitere Produkte erweitern. Zur Modellierung physikalischer Systeme wird \zb "`Simscape"' angeboten, womit Simulink um die Simulation mechanischer, elektrischer, hydraulischer und thermaler Systeme erweitert wird. Durch die Installation dieser Erweiterung werden auch Komponenten der Elektrotechnik wie der Operationsverstärker, Widerstand oder Kondensator zur Bibliothek hinzugefügt, wodurch analoge Rechenelemente modelliert werden können. Eine Implementierung des Masse-Feder-Dämpfer Systems anhand dieser Komponenten ist in Abbildung \ref{fig:Simulink und Simscape} dargestellt. Physikalische Signale können mit den herkömmlichen Simulink-Blöcken über Signal-Konverter verbunden werden, wodurch Simulink- und Simscape-Modelle miteinander kompatibel werden \cite{MathWorksSimscape}. Für diese Arbeit wird jedoch nur Simulink betrachtet, die theoretischen Konzepte werden also nicht physikalisch modelliert.
 
 \begin{figure}[h]
-  \includegraphics[width=\textwidth]{abbildungen/simulink_simscape.jpg}
-  \caption{Masse-Feder-Dämpfer System in Simulink und Simscape. Quelle: \cite{MathWorksSimscape}}
   \label{fig:Simulink und Simscape}
+  \caption{Masse-Feder-Dämpfer System in Simulink und Simscape}
+  \includegraphics[width=\textwidth]{abbildungen/simulink_simscape.jpg}
+  \\
+  Quelle: \cite{MathWorksSimscape}
 \end{figure}
