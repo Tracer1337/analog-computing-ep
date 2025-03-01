@@ -11,7 +11,7 @@ Als Erweiterung zu Matlab kommt Simulink für diese Arbeit infrage, eine grafisc
 
 Die von Simulink vorgegebenen Blöcke sind in Bibliotheken aufgeteilt. In "`Sources"' befinden sich diverse Blöcke wie Konstanten, Sinus-Kurven oder Puls-Generatoren zur Eingabe in das Modell. "`Sinks"' bietet Blöcke zur Darstellung oder dem Export von Signalen, wie dem "`Scope"' zur Darstellung eines Graphen oder "`Display"' zur einfachen Anzeige von Werten, an. Auch alle für diese Arbeit relevanten mathematischen Operationen sind in Simulink innerhalb der Bibliothek "`Math Operations"' vorhanden. Dazu zählen Funktionen wie Summierung, Multiplizierung und Koeffizienten. Die Bibliothek "`Continuous"' beinhaltet Funktionen speziell für kontinuierliche Signale, wie sie in analogen Rechner genutzt werden. Dazu zählen primär die Integration bzw. die Ableitung eines Signals. Unter "`Discrete"' befinden sich demnach Blöcke für diskrete Signale, die in dieser Arbeit aber nicht zum Einsatz kommen können. Letztlich bietet Simulink eine nützliche Funktion zur Vereinfachung und Validierung von Modellen mit den "`User Defined Functions"' an, womit Matlab-Code einfach in ein Simulink-Modell integriert werden kann. (\cite[vgl.]{Peasley2018})
 
-Wie mithilfe der genannten Blöcke das Masse-Pfeder-Dämpfer System aus Abbildung \ref{fig:Feder-Masse-D\"ampfer System mit R\"uckkopplung} modelliert werden kann, wurde bereits von \citeauthor{Ulmann2022} gezeigt:
+Wie mithilfe der genannten Blöcke das Masse-Pfeder-Dämpfer System aus Abbildung \ref{fig:Feder-Masse-D\"ampfer System mit R\"uckkopplung} modelliert werden kann, wurde bereits von \citeauthor{Ulmann2022} gezeigt, siehe Abbildung \ref{fig:Masse-Feder-Dämpfer Simulink}.
 
 \begin{figure}[h]
   \caption{Simulation eines Masse-Feder-Dämpfer Systems in Simulink}
@@ -27,6 +27,6 @@ Zusätzlich zur Standard-Bibliothek lässt sich Simulink durch weitere Produkte 
   \caption{Masse-Feder-Dämpfer System in Simulink und Simscape}
   \includegraphics[width=\textwidth]{abbildungen/simulink_simscape.jpg}
   \\
-  Quelle: \cite{MathWorksSimscape}
+  Quelle: \cite{website:mathworks:simscape}
   \label{fig:Simulink und Simscape}
 \end{figure}

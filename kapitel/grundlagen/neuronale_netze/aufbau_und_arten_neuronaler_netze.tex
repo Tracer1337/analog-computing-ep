@@ -10,10 +10,6 @@ Heute sind neuronale Netze für ihre Vielseitigkeit, Leistungsfähigkeit und Ska
 
 Eines der einfachsten neuronalen Netze ist das von \cite{Rosenblatt1958} vorgestellte Perceptron, dieses basiert auf dem Konzept der \ac{tlu}. Die Eingabe- und Ausgabewerte einer \ac{tlu} sind numerisch und den eingehenden Verbindungen ist jeweils ein Gewicht zugewiesen. Die \ac{tlu} berechnet nun die gewichtete Summe der Eingabewerte \(z=w_1x_1+w_2x_2 ... +w_nx_n=xtw\). Unter Anwendung einer Aktivierungsfunktion \(hw(x)=step(z)\) kann nun berechnet werden, ob die \ac{tlu} den Wert 0 oder 1 ausgibt. Eine Aktivierungsfunktion für diese Art der Neuronen ist i. d. R. eine Heaviside-Funktion oder eine Vorzeichen-Funktion. (\cite[vgl. S. 284 ff.]{Geron2019})
 
-Aktivierungsfunktionen aus Buch einfügen
-
-Abbildung aus Buch nachstellen
-
 Eine alleinstehende \ac{tlu} kann ausschließlich für lineare binäre Klassifikation genutzt werden, es berechnet eine gewichtete Summe anhand der Eingabewerte und gibt einen positiven oder negativen Ausgabewert, abhängig von der Überschreitung eines Schwellenwertes. Ein Perceptron stellt nun eine Sammlung dieser Einheiten auf einer einzelnen Ebene dar, wobei jede \ac{tlu} mit jeder Eingabe verbunden ist. Dies wird als Dense Layer oder Fully Connected Layer bezeichnet. Die Eingabewerte des Perceptron werden durch Eingabe-Neuronen geschleust, wozu zusätzlich ein Bias-Neuron gezählt wird. Dieses Neuron gibt konstant den Wert 1 aus und dient dazu, jedem Neuron des Perceptron einen Bias-Wert zuzuweisen. Die Ausgabe eines Perceptron berechnet sich durch \(h_W,b(X)=\rho(XW+b)\) (\cite[vgl. S. 284 ff.]{Geron2019})
 
 Das Perceptron kann nun in mehreren Ebenen genutzt werden, um ein \ac{mlp} zu erzeugen. Dieses besteht aus einer Eingabe-Ebene, mindestens einer versteckten Ebene und einer Ausgabe-Ebene. Jede dieser Ebenen ist im \ac{mlp} mit der jeweils nächsten Ebene vollständig verbunden. Das \ac{mlp} kann durch die vorwärts gerichteten Verbindungen auch als \ac{fnn} bezeichnet werden, eines mit vielen versteckten Ebenen wird \ac{dnn} genannt. (\cite[vgl. S. 284 ff.]{Geron2019})
