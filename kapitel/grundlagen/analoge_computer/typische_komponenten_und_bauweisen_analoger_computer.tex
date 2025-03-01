@@ -63,19 +63,19 @@ Die im ersten Augenblick einfache Multiplizierung ist auf analogen Rechnern komp
 
 Ein Komparator kann \zb zur Implementierung einer Schrittfunktion oder zum Tauschen von Variablen genutzt werden. Um das zu erreichen, reicht es schon aus, Dioden in der Feedback-Schleife eines Operationsverstärkers zu platzieren. Nach einem ähnlichen Prinzip kann auch ein Begrenzer erzeugt werden, dessen Eingangssignal zwischen einer Ober- und Untergrenze limitiert wird. (\cite[S. 116]{Ulmann2022})
 
-Die im Jahr 2020 gegründete anabrid GmbH hat es sich zum Ziel gesetzt, analoge und digitale Technologien zu kombinieren, um die technologischen Herausforderungen der Zukunft effizient lösen zu können. Dazu entwickelt und vertreibt das Unternehmen rekonfigurierbare analoge Rechner, wie den 2024 erschienenen "`lucidac"' oder das rudimentäre "`The Analog Thing"' (\cite{AnabridWebsite}).
+Die im Jahr 2020 gegründete anabrid GmbH hat es sich zum Ziel gesetzt, analoge und digitale Technologien zu kombinieren, um die technologischen Herausforderungen der Zukunft effizient lösen zu können. Dazu entwickelt und vertreibt das Unternehmen rekonfigurierbare analoge Rechner, wie den 2024 erschienenen "`lucidac"' oder das rudimentäre "`The Analog Thing"' (\cite{website:anabrid:homepage}).
 
 \begin{quote}
-  "`THE ANALOG THING is a high-quality, low-cost, open-source, and not-for-profit cutting-edge analog computer. You can think of it as a kind of Raspberry Pi that computes with continuous voltages rather than with zeroes and ones."' (\cite{TheAnalogThingDocs})
+  "`THE ANALOG THING is a high-quality, low-cost, open-source, and not-for-profit cutting-edge analog computer. You can think of it as a kind of Raspberry Pi that computes with continuous voltages rather than with zeroes and ones."' (\cite{website:anabrid:that-docs})
 \end{quote}
 
-Das \ac{that} orientiert sich am historischen Design der analogen Computer und arbeitet demnach mit Patchkabeln, mit denen Rechenelemente verschaltet werden (siehe Abbildung \ref{fig:The Analog Thing}). Dabei arbeitet das Gerät mit 10 Volt und in einem Wertebereich von \pm 1. Fällt eine Spannung außerhalb dieses Wertebereichs, fällt das Gerät in den sog. "`Overload"'-Modus und signalisiert dies über eine LED. Außerdem bietet das Gerät Anschlüsse für einige Variablen, welche als Ein- oder Ausgaben zur Auswertung oder Verschaltung mit weiteren analogen Rechnern genutzt werden können (\cite{TheAnalogThingDocs}).
+Das \ac{that} orientiert sich am historischen Design der analogen Computer und arbeitet demnach mit Patchkabeln, mit denen Rechenelemente verschaltet werden (siehe Abbildung \ref{fig:The Analog Thing}). Dabei arbeitet das Gerät mit 10 Volt und in einem Wertebereich von \pm 1. Fällt eine Spannung außerhalb dieses Wertebereichs, fällt das Gerät in den sog. "`Overload"'-Modus und signalisiert dies über eine LED. Außerdem bietet das Gerät Anschlüsse für einige Variablen, welche als Ein- oder Ausgaben zur Auswertung oder Verschaltung mit weiteren analogen Rechnern genutzt werden können (\cite{website:anabrid:that-docs}).
 
 \begin{figure}[h]
   \caption{The Analog Thing des Herstellers anabrid GmbH}
   \includegraphics[width=0.75\textwidth]{abbildungen/the_analog_thing.jpg}
   \\
-  Quelle: \cite{TheAnalogThingDocs}
+  Quelle: \cite{website:anabrid:that-docs}
   \label{fig:The Analog Thing}
 \end{figure}
 
@@ -92,11 +92,11 @@ Wie in Abbildung \ref{fig:The Analog Thing} zu sehen, bietet das \ac{that} die g
     \includegraphics[width=\textwidth]{abbildungen/euler_spirale_ausgabe.jpg}\par
   \end{subfigure}
   \\
-  Quelle: \cite{TheAnalogThingDocs}
+  Quelle: \cite{website:anabrid:that-docs}
   \label{fig:THAT Euler Spirale}
 \end{figure}
 
-Das neueste Modell des Herstellers Anabrid, der "`lucidac"', lasst sich digital über Software progammieren, wodurch der manuelle Aufwand durch die Verkabelung des Rechners wegfällt (\cite[vgl.]{AnabridLucidAC2025}). Dafür wurde eine Python-Bibliothek entwickelt, die durch Befehle wie "`connect(a, b)"' Verbindungen zwischen Komponenten herstellen kann (\cite[vgl.]{AnabridLucipy}). Um die software-gesteuerte Programmierung zu ermöglichen, verwendet der lucidac eine Verbindungs-Matrix, welche der Verbindung aller Komponenten ein Gewicht zuweist. Wird ein Wert innerhalb der Matrix von null auf \zb eins geändert, so wird eine neue (gewichtete) Verbindung hergestellt (\cite{AnabridLucidAC2025}). Seien \(C^{in}\) bzw. \(C^{out}\) die Ein- bzw. Ausgaben der Komponenten und \(M\) die gewichteten Verbindungen zwischen Komponenten, so gilt:
+Das neueste Modell des Herstellers Anabrid, der "`lucidac"', lasst sich digital über Software progammieren, wodurch der manuelle Aufwand durch die Verkabelung des Rechners wegfällt (\cite[vgl.]{AnabridLucidAC2025}). Dafür wurde eine Python-Bibliothek entwickelt, die durch Befehle wie "`connect(a, b)"' Verbindungen zwischen Komponenten herstellen kann (\cite[vgl.]{website:anabrid:lucipy}). Um die software-gesteuerte Programmierung zu ermöglichen, verwendet der lucidac eine Verbindungs-Matrix, welche der Verbindung aller Komponenten ein Gewicht zuweist. Wird ein Wert innerhalb der Matrix von null auf \zb eins geändert, so wird eine neue (gewichtete) Verbindung hergestellt (\cite{AnabridLucidAC2025}). Seien \(C^{in}\) bzw. \(C^{out}\) die Ein- bzw. Ausgaben der Komponenten und \(M\) die gewichteten Verbindungen zwischen Komponenten, so gilt:
 
 \textbf{Formel \ref{eq:Beziehung zwischen Eingangs- und Ausgangssignalen im lucidac}: Beziehung zwischen Eingangs- und Ausgangssignalen im lucidac}
 \begin{flalign}
