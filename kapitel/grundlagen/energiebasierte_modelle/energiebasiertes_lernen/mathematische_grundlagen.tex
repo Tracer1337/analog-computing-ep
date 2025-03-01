@@ -1,10 +1,8 @@
 \paragraph{Mathematische Grundlagen}
 
-\textbf{TODO: Seitenzahlen für Quellenangaben}
+Ein Verfahren zum Trainieren \ac{ebm} stellt das \ac{ep} dar. Dabei wird der Gradient der Energiefunktion berechnet, um die Modellparameter zu optimieren. Anstatt Vorhersagen explizit zu definieren, werden diese implizit aus den Datenpunkten und Parametern abgeleitet, wodurch sich das Verfahren besonders für analoge Computer eignet. (\cite[vgl. S. 1]{Scellier2017})
 
-Ein Verfahren zum Trainieren \ac{ebm} stellt das \ac{ep} dar. Dabei wird der Gradient der Energiefunktion berechnet, um die Modellparameter zu optimieren. Anstatt Vorhersagen explizit zu definieren, werden diese implizit aus den Datenpunkten und Parametern abgeleitet, wodurch sich das Verfahren besonders für analoge Computer eignet. (\cite{Scellier2017})
-
-Der Zustand des Modells wird durch den Vektor \(s\) repräsentiert, wobei \(v\) die Eingabevariablen und \(\theta\) die Modellparameter bezeichnet. Die Zustandsvariable \(s\) entwickelt sich über die Zeit hinweg so, dass die Energiefunktion \(E(\theta,v,s)\) minimiert wird. Neben dieser Funktion wird auch eine Kostenfunktion \(C(\theta,v,s)\) definiert, welche die Abweichung der Modellausgabe von den Zielwerten beschreibt. Eine geringere Energie für eine bestimmte Variablenkonfiguration sollte mit einer entsprechend niedrigeren Kostenfunktion einhergehen. Zudem wird der Einflussparameter \(\beta\) eingeführt, der als Skalierungsfaktor für die Kostenfunktion dient. Die Gesamtenergiefunktion \(F\) im Rahmen des \ac{ep} lautet damit:
+Der Zustand des Modells wird durch den Vektor \(s\) repräsentiert, wobei \(v\) die Eingabevariablen und \(\theta\) die Modellparameter bezeichnet. Die Zustandsvariable \(s\) entwickelt sich über die Zeit hinweg so, dass die Energiefunktion \(E(\theta,v,s)\) minimiert wird. Neben dieser Funktion wird auch eine Kostenfunktion \(C(\theta,v,s)\) definiert, welche die Abweichung der Modellausgabe von den Zielwerten beschreibt. Eine geringere Energie für eine bestimmte Variablenkonfiguration sollte mit einer entsprechend niedrigeren Kostenfunktion einhergehen. Zudem wird der Einflussparameter \(\beta\) eingeführt, der als Skalierungsfaktor für die Kostenfunktion dient \cite[vgl. S. 5]{Scellier2017}. Die Gesamtenergiefunktion \(F\) im Rahmen des \ac{ep} lautet damit:
 
 \textbf{Formel \ref{eq:Gesamtenergiefunktion im ep}: Gesamtenergiefunktion im \ac{ep}}
 \begin{flalign}
@@ -13,7 +11,7 @@ Der Zustand des Modells wird durch den Vektor \(s\) repräsentiert, wobei \(v\) 
 \end{flalign}
 \cite[Quelle: ][S. 5]{Scellier2017}
 
-Die Fixpunkte des Modells werden als \(s_{(\theta,v)}^\beta\) bezeichnet und entsprechen jeweils lokalen Minima der Gesamtenergiefunktion \(F\). Für \(\beta=0\) ergibt sich \(s_{(\theta,v)}^0\), das Minimum der Energiefunktion \(E\), welches die Vorhersage des Modells repräsentiert. (\cite{Scellier2017})
+Die Fixpunkte des Modells werden als \(s_{(\theta,v)}^\beta\) bezeichnet und entsprechen jeweils lokalen Minima der Gesamtenergiefunktion \(F\). Für \(\beta=0\) ergibt sich \(s_{(\theta,v)}^0\), das Minimum der Energiefunktion \(E\), welches die Vorhersage des Modells repräsentiert. (\cite{vgl. S. 5 f.}{Scellier2017})
 
 Die Zielfunktion \(J\), die im Equilibrium Propagation-Ansatz optimiert wird, lautet:
 
@@ -24,7 +22,7 @@ Die Zielfunktion \(J\), die im Equilibrium Propagation-Ansatz optimiert wird, la
 \end{flalign}
 \cite[Quelle: ][S. 5]{Scellier2017}
 
-Während die Kostenfunktion \(C\) die Modellqualität für beliebige Werte von \(\beta\) beschreibt, betrachtet \(J\) diese ausschließlich für \(\beta=0\). Der Gradient der Zielfunktion \(J\) nach den Parametern \(\theta\) ergibt sich durch:
+Während die Kostenfunktion \(C\) die Modellqualität für beliebige Werte von \(\beta\) beschreibt, betrachtet \(J\) diese ausschließlich für \(\beta=0\) \cite[vgl. S. 6]{Scellier2017}. Der Gradient der Zielfunktion \(J\) nach den Parametern \(\theta\) ergibt sich durch:
 
 \textbf{Formel \ref{eq:Gradient der Zielfunktion über die Parameter des Modells im ep}: Gradient der Zielfunktion über die Parameter des Modells im \ac{ep}}
 \begin{flalign}
@@ -42,4 +40,4 @@ Daraus ergibt sich die Änderungsrate von \(\theta\):
 \end{flalign}
 \cite[Quelle: ][S. 6]{Scellier2017}
 
-Hieraus resultiert in der praktischen Anwendung auf das \ac{hnn} ein zweistufiger Lernprozess. In der ersten Phase wird eine Inferenz durchgeführt, bei der ein Minimum der Energiefunktion ermittelt und die Ausgabe des Netzwerks ausgelesen wird. Während dieser Phase gilt \(\beta=0\). In der zweiten Phase wird \(\beta>0\) gesetzt, wodurch die Ausgabe des Netzwerks in Richtung des Zielwertes gesteuert wird. Zu Beginn dieser Phase befinden sich die versteckten Variablen des Netzwerks noch im Gleichgewicht, jedoch breitet sich die Störung der Ausgabevariablen im Laufe der Zeit auf diese aus. Betrachtet man ein mehrschichtiges Netzwerk, so propagiert die Störung rückwärts durch die Struktur des Netzwerks, ein Prinzip, das auch als Backpropagation bekannt ist. (\cite{Scellier2017})
+Hieraus resultiert in der praktischen Anwendung auf das \ac{hnn} ein zweistufiger Lernprozess. In der ersten Phase wird eine Inferenz durchgeführt, bei der ein Minimum der Energiefunktion ermittelt und die Ausgabe des Netzwerks ausgelesen wird. Während dieser Phase gilt \(\beta=0\). In der zweiten Phase wird \(\beta>0\) gesetzt, wodurch die Ausgabe des Netzwerks in Richtung des Zielwertes gesteuert wird. Zu Beginn dieser Phase befinden sich die versteckten Variablen des Netzwerks noch im Gleichgewicht, jedoch breitet sich die Störung der Ausgabevariablen im Laufe der Zeit auf diese aus. Betrachtet man ein mehrschichtiges Netzwerk, so propagiert die Störung rückwärts durch die Struktur des Netzwerks, ein Prinzip, das auch als Backpropagation bekannt ist. (\cite{vgl. S. 4}{Scellier2017})
