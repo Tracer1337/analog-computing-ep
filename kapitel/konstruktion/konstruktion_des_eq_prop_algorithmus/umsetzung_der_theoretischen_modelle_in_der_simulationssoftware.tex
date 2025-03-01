@@ -28,15 +28,30 @@ In einer Arbeit von \citeauthor{Kendall2020} wurde bereits gezeigt, dass \ac{ep}
 
 Damit das \ac{ep} auf analoger Hardware realisierbar wird, muss eine kontinuierliche Lernregel aufgestellt werden. Einen Ansatz hierfür bietet das \citeyear{Ernoult2020} von \citeauthor{Ernoult2020} vorgestellte \ac{c-ep}. Diese Abwandlung des \ac{ep} bietet einerseits seine räumliche Lokalität, welche durch die Eigenschaft der Lernregel \(\Delta W_{ij}\), nur mit den beiden Zuständen \(u_{i}\) und \(u_{j}\) auszukommen, gegeben ist (siehe Kapitel \ref{chap:Theoretische Anwendung am Beispiel eines Hopfield-Netzwerks}). Zusätzlich arbeitet \ac{c-ep} lokal in Zeit, da der Zugriff auf das Ergebnis der freien Phase nach der festen Phase entfällt (\cite[vgl. S. 3 f.]{Ernoult2020}). Im \ac{c-ep} werden die Parameter \(\theta\) des Modells nicht durch eine Lernregel wie \(\Delta W\) aktualisiert, sondern ähnlich wie die Zustände des Modells, durch eine Dynamik beschrieben.
 
-\[\theta^{\beta,\eta}_{t+1}={\theta^{\beta,\eta}_{t}}+\frac{\eta}{\beta}\left(\frac{\partial{\Phi}}{\partial{\theta}}(x,s^{\beta,\eta}_{t+1},\theta^{\beta,\eta}_{t})-\frac{\partial{\Phi}}{\partial{\theta}}(x,s^{\beta,\eta}_{t},\theta^{\beta,\eta}_{t})\right)\]
+\textbf{Formel \ref{eq:Anwendung des c-ep auf ein rnn}: Anwendung des \ac{c-ep} auf ein \ac{rnn}}
+\begin{flalign}
+  \theta^{\beta,\eta}_{t+1}={\theta^{\beta,\eta}_{t}}+\frac{\eta}{\beta}\left(\frac{\partial{\Phi}}{\partial{\theta}}(x,s^{\beta,\eta}_{t+1},\theta^{\beta,\eta}_{t})-\frac{\partial{\Phi}}{\partial{\theta}}(x,s^{\beta,\eta}_{t},\theta^{\beta,\eta}_{t})\right)
+  \label{eq:Anwendung des c-ep auf ein rnn}
+\end{flalign}
+\cite[Quelle: ][S. 4]{Ernoult2020}
 
 Angewandt auf ein \ac{rnn} kann die Lernregel, wie von \citeauthor{Ernoult2020} beschrieben, wie folgt aussehen:
 
-\[\Delta^{C-EP}_W(\beta,\eta,t)=\frac{1}{\beta}(s^{\beta,\eta}_{t+1}\cdot s^{\beta,\eta^{\intercal}}_{t+1}-s^{\beta,\eta}_{t}\cdot s^{\beta,\eta^{\intercal}}_{t})\]
+\textbf{Formel \ref{eq:Anwendung des c-ep auf ein rnn}: Anwendung des \ac{c-ep} auf ein \ac{rnn}}
+\begin{flalign}
+  \Delta^{C-EP}_W(\beta,\eta,t)=\frac{1}{\beta}(s^{\beta,\eta}_{t+1}\cdot s^{\beta,\eta^{\intercal}}_{t+1}-s^{\beta,\eta}_{t}\cdot s^{\beta,\eta^{\intercal}}_{t})
+  \label{eq:Anwendung des c-ep auf ein rnn}
+\end{flalign}
+\cite[Quelle: ][S. 24]{Ernoult2020}
 
 Auf Grundlage des \ac{c-ep} stellte \citeauthor{Martin2020} das \ac{eqspike}, eine weitere Abwandlung des \ac{ep} zur Anwendung auf neuromorphe Systeme, vor. Die Arbeit stellt neben dem angepassten Lernalgorithmus auch eine Dynamik \(\frac{dW_{ij}}{dt}\), angepasst für das von \citeauthor{Scellier2017} vorgestellte \ac{hnn}, vor (\cite[vgl. S. 3]{Martin2020}), mit derer hier weitergearbeitet wird.
 
-\[\frac{dW_{ij}}{dt}\propto\dot{\rho}_j\rho_i+\dot{\rho}_i\rho_j\]
+\textbf{Formel \ref{eq:Kontinuierliche Anpassung der Gewichte eines rnn}: Kontinuierliche Anpassung der Gewichte eines \ac{rnn}}
+\begin{flalign}
+  \frac{dW_{ij}}{dt}\propto\dot{\rho}_j\rho_i+\dot{\rho}_i\rho_j
+  \label{eq:Kontinuierliche Anpassung der Gewichte eines rnn}
+\end{flalign}
+\cite[Quelle: ][S. 2]{Martin2020}
 
 Zur Umsetzung dieses angepassten Lernprozesses kommt, wie im vorherigen Ansatz auch, ein zeitgesteuerter Pulsgenerator zum Einsatz. Der Einflussparameter \(\beta\) wird weiterhin über einen Komparator verbunden mit zwei Konstanten implementiert, zusätzlich wird nun die Lernrate \(\eta\) benötigt, welche einen konstanten Wert über den gesamten Lernprozess annimmt. Die Implementierung des \ac{hnn} berechnet bereits die Aktivierungen der Neuronen bzw. die Änderungsraten dieser (siehe Kapitel \ref{chap:Übernahme des Hopfield-Netzwerks}), weshalb die entsprechenden Signale aus dem Netzwerk für die Berechnung von \(\frac{dW_{ij}}{dt}\) genutzt werden können.
 

@@ -3,9 +3,7 @@
 
 Im Folgenden soll die von \citeauthor{Scellier2017} vorgestellte Dynamik \(\frac{ds}{dt}\) eines \ac{hnn} (wie bereits im Kapitel \ref{chap:Theoretische Anwendung am Beispiel eines Hopfield-Netzwerks} gezeigt) in Simulink implementiert werden.
 
-Um die Zustandsvariablen \(s\) darzustellen, können Integratoren genutzt werden, welche standardmäßig über Zeit integrieren. Über die Initialwerte dieser Integratoren wird die Eingabe in das \ac{hnn} definiert, welche dann über die Dynamik zu einem Fixpunkt gelangen:
-
-\[\frac{ds}{dt}=-\frac{\partial{E}}{\partial{s}}-\beta\frac{\partial{C}}{\partial{s}}\]
+Um die Zustandsvariablen \(s\) darzustellen, können Integratoren genutzt werden, welche standardmäßig über Zeit integrieren. Über die Initialwerte dieser Integratoren wird die Eingabe in das \ac{hnn} definiert, welche dann über die Dynamik zu einem Fixpunkt gelangen (vgl. Formel "Dynamik der Zustände eines \ac{hnn} im \ac{ep}").
 
 Um diesen Term abzubilden werden die Gewichte benötigt, diese und ihre Initialwerte werden vorerst über Konstanten implementiert. Das hier untersuchte Netzwerk soll im Wertebereich \([0; 1]\) arbeiten, da sich dieser für die Anwendung auf analogen Computern eignet und für \zb Bildverarbeitung mit \(0\) für Schwarz bzw. \(1\) für Weiß genutzt werden kann. Als Aktivierungsfunktion kommt daher eine Sigmoidfunktion, die logistische Funktion \(\rho(x)=\frac{1}{1+e^{-x}}\), zum Einsatz, welche diesen Wertebereich ausgibt. Diese Funktion kann praktisch über einen Funktionsgenerator und in Simulink über einen Matlab-Funktionsblock (Siehe Anhang \ref{app:Umsetzung des Hopfield-Netzwerks in Simulink}) erzeugt werden. Zusätzlich zur Aktivierungsfunktion wird auch ihre Ableitung \(\rho'(x)=\rho(x)(1-\rho(x))\) benötigt, welche auf selbe Weise implementiert wird.
 

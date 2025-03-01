@@ -13,7 +13,12 @@ Der Operationsverstärker gilt als zentraler Baustein für die meisten Komponent
 
 Die Formel zu Berechnung der Ausgangsspannung lautet damit wie folgt:
 
-\[e_o=\frac{R_f}{R_i}e_i\]
+\textbf{Formel \ref{eq:Ausgangsspannung eines Operationsverstärkers}: Ausgangsspannung eines Operationsverstärkers}
+\begin{flalign}
+  e_o=\frac{R_f}{R_i}e_i
+  \label{eq:Ausgangsspannung eines Operationsverstärkers}
+\end{flalign}
+\cite[Quelle: ][S. 76]{Ulmann2022}
 
 Durch Anpassungen des Eingangssignals bzw. des Rückkopplungs-Signals kann die Funktion des Operationsverstärkers geändert werden. So sind hiermit Operationen wie Summieren, Subtrahieren, Invertieren, das Multiplizieren von Konstanten, Integration und (bedingt) die Differenzierung möglich.
 
@@ -91,6 +96,11 @@ Wie in Abbildung \ref{fig:The Analog Thing} zu sehen, bietet das \ac{that} die g
   \label{fig:THAT Euler Spirale}
 \end{figure}
 
-Das neueste Modell des Herstellers Anabrid, der "`lucidac"', lasst sich digital über Software progammieren, wodurch der manuelle Aufwand durch die Verkabelung des Rechners wegfällt (\cite[vgl.]{AnabridLucidAC2025}). Dafür wurde eine Python-Bibliothek entwickelt, die durch Befehle wie "`connect(a, b)"' Verbindungen zwischen Komponenten herstellen kann (\cite[vgl.]{AnabridLucipy}). Um die software-gesteuerte Programmierung zu ermöglichen, verwendet der lucidac eine Verbindungs-Matrix, welche der Verbindung aller Komponenten ein Gewicht zuweist. Wird ein Wert innerhalb der Matrix von null auf \zb eins geändert, so wird eine neue (gewichtete) Verbindung hergestellt (\cite{AnabridLucidAC2025}). Seien \(C^{in}\) bzw. \(C^{out}\) die Ein- bzw. Ausgaben der Komponenten und \(M\) die gewichteten Verbindung zwischen Komponenten, so gilt:
+Das neueste Modell des Herstellers Anabrid, der "`lucidac"', lasst sich digital über Software progammieren, wodurch der manuelle Aufwand durch die Verkabelung des Rechners wegfällt (\cite[vgl.]{AnabridLucidAC2025}). Dafür wurde eine Python-Bibliothek entwickelt, die durch Befehle wie "`connect(a, b)"' Verbindungen zwischen Komponenten herstellen kann (\cite[vgl.]{AnabridLucipy}). Um die software-gesteuerte Programmierung zu ermöglichen, verwendet der lucidac eine Verbindungs-Matrix, welche der Verbindung aller Komponenten ein Gewicht zuweist. Wird ein Wert innerhalb der Matrix von null auf \zb eins geändert, so wird eine neue (gewichtete) Verbindung hergestellt (\cite{AnabridLucidAC2025}). Seien \(C^{in}\) bzw. \(C^{out}\) die Ein- bzw. Ausgaben der Komponenten und \(M\) die gewichteten Verbindungen zwischen Komponenten, so gilt:
 
-\[C_i^{in}=\sum_{j=0}^{16}M_{ij}C_j^{out}, i,j\in[0,16]\]
+\textbf{Formel \ref{eq:Beziehung zwischen Eingangs- und Ausgangssignalen im lucidac}: Beziehung zwischen Eingangs- und Ausgangssignalen im lucidac}
+\begin{flalign}
+  C_i^{in}=\sum_{j=0}^{16}M_{ij}C_j^{out}, i,j\in[0,16]
+  \label{eq:Beziehung zwischen Eingangs- und Ausgangssignalen im lucidac}
+\end{flalign}
+\cite[Quelle: ][S. 11]{AnabridLucidAC2025}
